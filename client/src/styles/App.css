@@ -32,8 +32,7 @@ hr{
   margin: auto;
 }
 .icon:hover {
-  transform: scale(1.1);
-  animation: spinAnimation 1s infinite linear;
+  transform: scale(1.1) ease-in-out 1s;
 }
 
 .git {
@@ -45,8 +44,8 @@ hr{
 }
 
 .iconContainer{
-  display: flex;
-  justify-content: space-around;
   align-items: center;
   margin-top: 20px;
+  width: 20%;
+  height: 5%;
 }
