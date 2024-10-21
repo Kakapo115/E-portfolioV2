@@ -1,0 +1,313 @@
+.App {
+  text-align: center;
+  background-color: #050d25;
+  margin: -8px;
+}
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 80px;
+  background-color: #10002b46;
+  color: #e0aaff;
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+  box-sizing: border-box;
+  justify-content: space-between;
+  z-index: 1000; /* Add a higher z-index value to keep the header above other content */
+}
+
+.header h1 {
+  width: 25%;
+  margin: 0;
+}
+
+.header-right {
+  display: flex;
+  justify-content: flex-end;
+  flex-grow: 1;
+}
+
+.header-right h2 {
+  padding: 8px;
+}
+
+.header h2 {
+  margin: 0;
+}
+/* Add a media query for screens smaller than a certain width */
+@media screen and (max-width: 1024px) {
+  .section .img {
+    width: 150%;
+    margin-left: -25%;
+  }
+}
+@media screen and (max-width: 768px) {
+  .header-right {
+    display: none; /* Hide the content in header-right */
+  }
+
+  .header h1 {
+    width: 100%; /* Make h1 cover the whole width */
+  }
+  .section .img {
+    width: 215%;
+    margin-left: -57.5%;
+  }
+}
+@media screen and (max-width: 600px) {
+  .section .img {
+    width: 350%;
+    margin-left: -125%;
+  }
+}
+
+.section {
+  text-align: center;
+  color: #e0aaff;
+  opacity: 0; /* Initially set the opacity to 0 for fading effect */
+  transition: opacity 0.5s ease; /* Add a transition for smooth fading */
+  position: relative; /* Add this to allow .textbox to be positioned relative to .section */
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.img-container {
+  width: 100%; /* Adjust as needed */
+  overflow: hidden;
+}
+
+.section1 {
+  margin-top: 0;
+  opacity: 1;
+  position: relative;
+}
+
+.aboutMe {
+  position: absolute;
+  top: 35%;
+  right: 10%;
+  border-radius: 5px;
+  max-width: 80%;
+  width: 100%; /* Expand the box to full width */
+  flex: auto;
+  display: flex; /* Make it a flex container */
+  justify-content: center; /* Center horizontally */
+}
+.aboutMe p {
+  font-size: 14px;
+  color: #e0aaff;
+}
+
+.img {
+  width: 100%;
+  height: auto;
+  margin-left: auto;
+  margin-right: auto;
+  display: block; /* This ensures the image is centered */
+  overflow: hidden;
+}
+
+.preview {
+  height: auto;
+  width: 100%;
+  border-radius: 25px;
+}
+
+
+
+.leftbox h1 {
+  color: #9d4edd;
+}
+.work-selection {
+  max-height: 300px;
+  overflow-y: auto;
+  overflow-x: visible;
+}
+/* Style for translucent scrollbar */
+.work-selection::-webkit-scrollbar {
+  width: 10px;
+}
+
+.work-selection::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 255, 255, 0.5); /* Adjust the transparency here */
+  border-radius: 5px;
+}
+
+.work-selection::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+.item {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  margin: 5px;
+  background-color: #10002b7c;
+  border-radius: 5px;
+}
+.item:hover {
+  background-color: rgba(122, 44, 191, 0.624);
+}
+.selected {
+  background-color: #59189aa0;
+}
+
+.my-work-title {
+  /* Styles for the "My Work" title */
+  font-weight: bold;
+  margin-bottom: 10px; /* Add some space between the title and the items */
+}
+
+.name {
+  /* Styles for the name... */
+  width: 40%;
+  text-align: left;
+}
+
+.description {
+  /* Styles for the description... */
+  width: 50%;
+  text-align: right;
+}
+.leftbox {
+  position: absolute;
+  left: 25%; /* Set the initial position to the center */
+  top: 50%;
+  transform: translate(-50%, -50%); /* Center the box */
+  padding: 10px;
+  border-radius: 5px;
+  max-width: 35%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  flex-direction: column;
+  align-items: center; /* Center the items horizontally */
+  text-align: center; /* Center the text (name and description) horizontally */
+  overflow: hidden;
+}
+
+.rightbox {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translate(-25%, -50%); /* Center the box */
+  background-color: rgba(25, 25, 25, 0);
+  padding: 10px;
+  border-radius: 5px;
+  max-width: 35%;
+  width: 100%; /* Expand the box to full width */
+}
+.rightbox h1 {
+  font-size: 50px;
+  color: #9d4edd;
+  margin-bottom: 10px;
+}
+.rightbox p {
+  color: #9d4edd;
+}
+
+.myworkstuff {
+  display: flex;
+  justify-content: center;
+}
+
+@media screen and (max-width: 770px) {
+  .leftbox,
+  .rightbox {
+    max-width: 80%;
+    padding: 0;
+  }
+  .myworkstuff {
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+  }
+  .leftbox {
+    transform: none;
+    right: 10%;
+    top: 2.5%;
+    left: unset;
+  }
+  .rightbox.contactform {
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  .rightbox {
+    right: 10%;
+    transform: none;
+  }
+  .rightbox p {
+    margin-top: 0;
+  }
+}
+@media screen and (max-width: 370px) {
+  .leftbox {
+    top: 2.5%;
+  }
+  .rightbox {
+    top: 55%;
+  }
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+.form-group input,
+.form-group textarea {
+  width: 90%;
+  padding: 8px;
+  border: none;
+  background-color: rgba(255, 255, 255, 0.8);
+  color: #e0aaff;
+  border-radius: 5px;
+  resize: none;
+  transition: background-color 0.3s ease;
+  box-shadow: 3px 3px #888888;
+}
+.form-group textarea {
+  height: 100px;
+}
+.form-group input:hover,
+.form-group textarea:hover,
+.form-group input:active,
+.form-group textarea:active {
+  background-color: rgba(174, 174, 174, 0.9);
+}
+.form-group button {
+  background-color: #3c096cda;
+  border: none;
+  padding: 10px 50px;
+  color: #e0aaff;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  box-shadow: 3px 3px #10002b;
+}
+.form-group button:hover {
+  background-color: rgb(157, 92, 157);
+}
+.sending-message {
+  color: #f19500;
+  font-style: italic;
+}
+.sent-message {
+  color: green;
+}
+
+a {
+  text-decoration: none;
+  color: #e0aaff;
+}
+.header-right a:hover,
+.header-right a:active {
+  color: #7a2cbfa9; /* Change link color on hover and active states */
+  cursor: pointer; /* Show the pointer cursor on hover */
+}

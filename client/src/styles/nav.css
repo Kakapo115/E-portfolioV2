@@ -1,0 +1,27 @@
+.navButton {
+  font-size: 30px;
+  padding: 10px;
+  margin: 5px;
+  border: 0px;
+  background-color: transparent;
+  transition: color 200ms, font-size 200ms;
+}
+
+.navButton:hover {
+  color: purple;
+  font-size: 45px;
+}
+
+.navButton:active {
+  color: rgb(245, 0, 245);
+}
+
+.navContainer {
+  display: inline-block;
+  text-align: center;
+}
+
+.mainNav {
+  display: inline-block;
+  text-align: center;
+}

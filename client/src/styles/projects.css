@@ -1,0 +1,91 @@
+.showcaseContainer {
+  width: 90%;
+  margin: 0 5% 0 5%;
+  display: flex;
+  justify-content: center;
+  border-radius: 10px; /* Smooth border radius */
+  overflow: hidden; /* Ensures the border-radius applies to all contents */
+  background-color: #000000; /* Optional: Add a background color to see the rounded edges */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Add a subtle shadow */
+}
+
+.showcaseItem {
+  flex: 1 1; /* Responsive width */
+  min-width: 150px;
+  transition: transform 0.3s ease-in-out, flex 0.3s ease-in-out;
+  font-size: 16px;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  height: 600px; /* Set a consistent height for all items */
+}
+
+.showcaseItem:hover {
+  flex: 3 1; /* Expands the hovered item */
+}
+
+.showcaseItem:not(:hover) {
+  flex: 0.5 1; /* Shrinks the non-hovered items */
+}
+
+.showcaseImg {
+  width: 100%;
+  max-height: 100%;
+  display: block;
+  object-fit: cover;
+  height: 100%; /* Ensure the image takes up full height */
+}
+
+/* Lighter overlay with name visible before hover */
+.showcaseDetails {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.4); /* Lighter overlay background */
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  opacity: 1; /* Always visible */
+  transition: opacity 0.3s ease-in-out, background-color 0.3s ease-in-out;
+}
+
+/* Darken the overlay and show more details on hover */
+.showcaseItem:hover .showcaseDetails {
+  background: rgba(0, 0, 0, 0.6); /* Darker background on hover */
+  opacity: 1;
+}
+
+/* Hide additional details until hover */
+.showcaseDetails p {
+  display: none;
+}
+
+.showcaseItem:hover .showcaseDetails p {
+  display: block;
+}
+
+ul {
+  list-style-type: none; /* Removes bullet points */
+  padding: 0;
+  text-align: center;
+}
+
+li {
+  margin: 5px 0;
+}
+
+.projLink {
+  color: #fff;
+  font-size: 24px;
+}
+.projLink:hover {
+  color: purple;
+}
+.projLink:active{
+  color: rgb(245, 0, 245);;
+}
+

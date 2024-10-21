@@ -1,0 +1,11 @@
+/* Smaller screen */
+@media screen and (max-width: 1400px) {
+    p{
+      font-size: 24px;
+    }
+    .aboutContainer {
+      width: 80%;
+      padding-left: 10%;
+      padding-right: 10%;
+    }
+  }
