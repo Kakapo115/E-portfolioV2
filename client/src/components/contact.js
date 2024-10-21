@@ -20,8 +20,6 @@ class contact extends Component {
     this.setState({ sending: true }); // Set sending state to true
 
     try {
-        const apiBaseUrl = process.env.REACT_APP_API_BASE_URL;
-      // Send the form data to the backend API
       const response = await axios.post("/api/dev/send-mail", {
         name,
         email,
