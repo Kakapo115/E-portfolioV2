@@ -17,10 +17,8 @@ class ProjectNav extends Component {
   }
 
   fetchDevData = (type) => {
-    // Make the API call to fetch the data from your server
-    const apiBaseUrl = process.env.REACT_APP_API_BASE_URL;
     axios
-      .get(`${apiBaseUrl}/api/dev?type=${type}`)
+      .get(`/api/dev?type=${type}`)
       .then((response) => {
         const devs = response.data;
         this.setState({
