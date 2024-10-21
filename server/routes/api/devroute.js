@@ -4,7 +4,7 @@ var router = express.Router();
 var devs = require("../../models/dev");
 
 // Email Service
-const sendMail = require("./sendMail");
+const sendMail = require("../api//sendMail");
 router.post("/send-mail", async (req, res) => {
   const { name, email, message } = req.body;
 

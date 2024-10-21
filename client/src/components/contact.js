@@ -22,7 +22,7 @@ class contact extends Component {
     try {
         const apiBaseUrl = process.env.REACT_APP_API_BASE_URL;
       // Send the form data to the backend API
-      const response = await axios.post(`${apiBaseUrl}/api/dev/send-mail`, {
+      const response = await axios.post("/api/dev/send-mail", {
         name,
         email,
         message,

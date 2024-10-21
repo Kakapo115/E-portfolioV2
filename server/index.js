@@ -23,7 +23,6 @@ app.use(bodyparser.json());
 // Connect to mongo using mongoose.
 // promises
 
-
 mongoose
   .connect(process.env.MONGO_CONNECTION)
   .then(function (err) {
