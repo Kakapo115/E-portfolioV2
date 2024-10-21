@@ -70,7 +70,7 @@ function App() {
       </div>
       {/* Renders the selected component */}
       <div>{renderComponent()}</div>
-      <div>
+      <div className="iconContainer">
         <a href="https://github.com/Kakapo115">
           <img src="GitHub-Logo.png" className="icon git" alt="GitHub-Logo" />
         </a>
