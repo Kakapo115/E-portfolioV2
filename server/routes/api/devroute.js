@@ -8,8 +8,6 @@ const sendMail = require("../api/sendMail");
 router.post("/send-mail", async (req, res) => {
   const { name, email, message } = req.body;
 
-  // Add some basic validation if required
-
   const success = await sendMail(name, email, message);
 
   if (success) {
