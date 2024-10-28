@@ -27,6 +27,13 @@
   flex: 0.5 1; /* Shrinks the non-hovered items */
 }
 
+/* Active item expansion on mobile */
+.showcaseItem.expanded {
+  flex: 3 1;
+  transform: scale(1.1);
+  transition: transform 0.3s ease-in-out;
+}
+
 .showcaseImg {
   width: 100%;
   max-height: 100%;
