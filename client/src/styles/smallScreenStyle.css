@@ -1,11 +1,39 @@
 /* Smaller screen */
-@media screen and (max-width: 1400px) {
-    p{
-      font-size: 24px;
-    }
-    .aboutContainer {
-      width: 80%;
-      padding-left: 10%;
-      padding-right: 10%;
-    }
+@media screen and (max-width: 900px) {
+  p {
+    font-size: 24px;
   }
+  .App {
+    background-size: cover;
+    background-position: top;
+  }
+
+  .navContainer,
+  .mainNav {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .navButton {
+    font-size: 24px;
+    margin: 10px 0;
+  }
+
+  .showcaseContainer {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin: 0;
+  }
+
+  .showcaseItem {
+    width: 100%;
+    height: auto;
+  }
+
+  .aboutContainer {
+    width: 80%;
+    padding-left: 10%;
+    padding-right: 10%;
+  }
+}

@@ -3,10 +3,10 @@
   margin: 0 5% 0 5%;
   display: flex;
   justify-content: center;
-  border-radius: 10px; /* Smooth border radius */
-  overflow: hidden; /* Ensures the border-radius applies to all contents */
-  background-color: #000000; /* Optional: Add a background color to see the rounded edges */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Add a subtle shadow */
+  border-radius: 10px;
+  overflow: hidden; 
+  background-color: #000000; 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
 }
 
 .showcaseItem {
