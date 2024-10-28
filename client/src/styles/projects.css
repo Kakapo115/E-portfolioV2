@@ -1,6 +1,6 @@
 .showcaseContainer {
   width: 90%;
-  margin: 0 5% 0 5%;
+  margin: 0 auto;
   display: flex;
   justify-content: center;
   border-radius: 10px;
@@ -9,29 +9,32 @@
 }
 
 .showcaseItem {
-  flex: 1 1; /* Responsive width */
+  flex: 1 1;
   min-width: 150px;
-  transition: transform 0.3s ease-in-out, flex 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, flex 0.3s ease-in-out, height 0.3s ease-in-out;
   font-size: 16px;
   position: relative;
   overflow: hidden;
   cursor: pointer;
-  height: 600px; /* Sets consistent height for all items */
+  height: 200px; /* Set an initial height */
 }
 
+/* Hover expansion for larger screens */
 .showcaseItem:hover {
-  flex: 3 1; /* Expands the hovered item */
+  flex: 3 1;
+  height: 400px; /* Increase height on hover */
+}
+
+/* Expand the clicked item in mobile view */
+.showcaseItem.expanded {
+  flex: 1 1;
+  width: 100%;
+  height: 400px; /* Height when expanded */
+  transform: scale(1.05);
 }
 
 .showcaseItem:not(:hover) {
   flex: 0.5 1; /* Shrinks the non-hovered items */
-}
-
-/* Active item expansion on mobile */
-.showcaseItem.expanded {
-  flex: 3 1;
-  transform: scale(1.1);
-  transition: transform 0.3s ease-in-out;
 }
 
 .showcaseImg {
