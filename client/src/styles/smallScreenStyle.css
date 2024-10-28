@@ -30,6 +30,10 @@
   .showcaseItem {
     width: 100%;
     height: auto;
+    
+  }
+  .showcaseItem:active {
+    flex: 3 1; /* Expands the hovered item */
   }
 
   .aboutContainer {
