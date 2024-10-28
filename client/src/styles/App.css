@@ -12,11 +12,14 @@ html, body, #root {
 }
 
 .App {
-  height: 105vh; /* 100% of the viewport height */
-  width: 100vw; /* 100% of the viewport width */
+  min-height: 100vh; /* Ensure it covers the full viewport height */
+  width: 100vw;
   display: flex;
-  flex-direction: column; 
+  flex-direction: column;
   text-align: center;
+  background-size: cover;
+  background-position: center; /* Center background image */
+  background-repeat: no-repeat;
 }
 
 hr{

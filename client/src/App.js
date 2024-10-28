@@ -40,7 +40,8 @@ function App() {
       style={{
         backgroundImage: getBackgroundImage(),
         backgroundSize: "cover",
-        backgroundPosition: "center",
+        backgroundPosition: "center center",
+        backgroundAttachment: "fixed",
         transition: "background-image 0.5s ease",
       }}
     >
