@@ -16,7 +16,7 @@
   position: relative;
   overflow: hidden;
   cursor: pointer;
-  height: 600px; /* Set a consistent height for all items */
+  height: 600px; /* Sets consistent height for all items */
 }
 
 .showcaseItem:hover {
@@ -32,7 +32,7 @@
   max-height: 100%;
   display: block;
   object-fit: cover;
-  height: 100%; /* Ensure the image takes up full height */
+  height: 100%; 
 }
 
 /* Lighter overlay with name visible before hover */

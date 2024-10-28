@@ -37,4 +37,22 @@
     padding-left: 10%;
     padding-right: 10%;
   }
+  .skills {
+    display: inline; /* Set skills container to inline */
+  }
+
+  .skill {
+    display: inline; /* Display each skill inline */
+    margin-right: 5px; 
+  }
+
+  ul {
+    padding: 0;
+    display: inline; /* Makes sure the ul doesn't stack */
+  }
+
+  li {
+    display: inline; /* Make each skill item inline */
+    margin-right: 5px;
+  }
 }
