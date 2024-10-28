@@ -15,23 +15,16 @@ class Showcase extends Component {
                 <p>{dev.description}</p>
                 <p>
                   <strong>Skills:</strong>
-                  <span className="skills">
+                  <ul>
+                    {/* Spliting the skills string by ', ' and mapping over it */}
                     {dev.skills.split(", ").map((skill, skillIndex) => (
-                      <span key={skillIndex} className="skill">
-                        {skill}
-                        {skillIndex < dev.skills.split(", ").length - 1 && ", "}
-                      </span>
+                      <li key={skillIndex}>{skill}</li>
                     ))}
-                  </span>
+                  </ul>
                 </p>
                 {/* Conditionally renders a link separately if the URL exists */}
                 {dev.url && (
-                  <a
-                    href={dev.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="projLink"
-                  >
+                  <a href={dev.url} target="_blank" rel="noopener noreferrer" className="projLink">
                     Visit Project
                   </a>
                 )}
