@@ -5,8 +5,8 @@
   }
   .App {
     min-height: 100vh;
-    background-size: cover; /* Ensure background covers entire div */
-    background-position: center; /* Center the background image */
+    background-size: cover; 
+    background-position: center; 
     background-attachment: fixed; /* Keeps the image fixed while scrolling */
   }
 
@@ -30,14 +30,12 @@
 
   .showcaseItem {
     width: 100%;
+    height: 200px; /* Set initial height for mobile view */
   }
 
-  /* Expand the clicked item in mobile view */
+  /* Specific height expansion for mobile view */
   .showcaseItem.expanded {
-    flex: 1 3;
-    width: 100%;
-    height: 200%;
-    transform: scale(1.05);
+    height: 400px; /* Expanded height for mobile */
   }
 
   .aboutContainer {
