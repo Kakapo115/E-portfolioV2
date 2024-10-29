@@ -26,6 +26,7 @@
     align-items: center;
     width: 90%;
     margin: 0 5%;
+    display: none;
   }
 
   .showcaseItem {
@@ -36,10 +37,6 @@
   /* Specific height expansion for mobile view */
   .showcaseItem.expanded {
     height: 400px; /* Expanded height for mobile */
-  }
-
-  .showcaseDetails {
-    width: 90%;
   }
 
   .aboutContainer {
