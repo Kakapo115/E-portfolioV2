@@ -4,7 +4,7 @@ class Showcase extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      expandedIndex: null, // Track which item is expanded
+      expandedIndex: null, // Track expanded item
     };
   }
 
