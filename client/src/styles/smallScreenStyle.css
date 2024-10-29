@@ -36,7 +36,8 @@
 
   /* Specific height expansion for mobile view */
   .showcaseItem.expanded {
-    height: 400px; /* Expanded height for mobile */
+    height: 600px; /* Expanded height for mobile */
+    padding: 5px;
   }
 
   .aboutContainer {
