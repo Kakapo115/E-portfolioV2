@@ -36,8 +36,7 @@ class Showcase extends Component {
   goToPreviousSlide = () => {
     const { devs } = this.props;
     this.setState((prevState) => ({
-      currentIndex:
-        (prevState.currentIndex - 1 + devs.length) % devs.length,
+      currentIndex: (prevState.currentIndex - 1 + devs.length) % devs.length,
     }));
   };
 
@@ -52,6 +51,12 @@ class Showcase extends Component {
   render() {
     const { devs } = this.props;
     const { currentIndex } = this.state;
+
+    // 💥 If no devs yet, show a loading state or nothing
+    if (!devs || devs.length === 0) {
+      return <div className="slideshowContainer">Loading projects...</div>;
+    }
+
     const dev = devs[currentIndex];
 
     return (
