@@ -82,16 +82,11 @@ class contact extends Component {
 
           <div class="cv-container">
             <h1>My Curriculum Vitae</h1>
-            <iframe
-              src="assets/your-cv.pdf"
-              width="100%"
-              height="600px"
-            ></iframe>
-            <a href="assets/your-cv.pdf" download class="download-btn">
+            <a href="assets/RickySyme-CV-SoftwareDev.docx.pdf" download class="download-btn">
               Download CV (PDF)
             </a>
           </div>
-          
+
         </div>
       </div>
     );
