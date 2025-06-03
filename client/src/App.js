@@ -50,19 +50,19 @@ function App() {
       <div className="navContainer">
         <div className="mainNav">
           <button
-            className="navButton"
+            className="nav"
             onClick={() => setSelectedComponent("contact")}
           >
             Contact
           </button>
           <button
-            className="navButton"
+            className="nav"
             onClick={() => setSelectedComponent("about")}
           >
             About
           </button>
           <button
-            className="navButton"
+            className="nav"
             onClick={() => setSelectedComponent("projects")}
           >
             Projects

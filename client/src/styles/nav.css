@@ -1,4 +1,4 @@
-.navButton {
+.nav {
   font-size: 30px;
   padding: 10px;
   margin: 5px;
@@ -7,12 +7,12 @@
   transition: color 200ms, font-size 200ms;
 }
 
-.navButton:hover {
+.nav:hover {
   color: purple;
   font-size: 45px;
 }
 
-.navButton:active {
+.nav:active {
   color: rgb(245, 0, 245);
 }
 
