@@ -1,5 +1,6 @@
 import "./styles/App.css";
-import Title from "./components/title";
+import Footer from "./components/footer";
+import Header from "./components/header";
 import Contact from "./components/contact";
 import About from "./components/navs/aboutNav";
 import Projects from "./components/navs/projectNav";
@@ -45,7 +46,7 @@ function App() {
         transition: "background-image 0.5s ease",
       }}
     >
-      <Title />
+      <Header />
       <div className="navContainer">
         <div className="mainNav">
           <button
@@ -71,18 +72,7 @@ function App() {
       </div>
       {/* Renders the selected component */}
       <div>{renderComponent()}</div>
-      <div className="iconContainer">
-        <a href="https://github.com/Kakapo115">
-          <img src="GitHub-Logo.png" className="icon git" alt="GitHub-Logo" />
-        </a>
-        <a href="https://www.linkedin.com/in/ricky-syme-b79701232/">
-          <img
-            src="linkdin-icon.png"
-            className="icon linkdin"
-            alt="LinkedIn-Icon"
-          />
-        </a>
-      </div>
+      <Footer />
     </div>
   );
 }
