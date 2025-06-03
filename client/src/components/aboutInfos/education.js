@@ -12,7 +12,7 @@ class education extends Component {
           development, game development through Unity and Unreal using C# and a
           little C++, and some other experiences. These skills combined with my
           personal ventures in the development world like working with python,
-          wordpress software, and other software it gives me wide selection of
+          wordpress software, and some other software it gives me wide selection of
           adaptable skills. Which can help me to learn any required skills I
           need to complete the task a hand.
         </p>

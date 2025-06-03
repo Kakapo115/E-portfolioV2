@@ -12,7 +12,7 @@ class about extends Component {
           realm or in nature camping, fishing, and the like. This gives me a
           good look at how things work which is how I found digital technology,
           which is the place id like to work and having finished my degree im
-          ready to enter the workforce.
+          ready to get into it.
         </p>
       </div>
     );

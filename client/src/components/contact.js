@@ -20,7 +20,7 @@ class contact extends Component {
     this.setState({ sending: true }); // Set sending state to true
 
     try {
-        const apiBaseUrl = process.env.REACT_APP_API_BASE_URL;
+      const apiBaseUrl = process.env.REACT_APP_API_BASE_URL;
       // Send the form data to the backend API
       const response = await axios.post(`${apiBaseUrl}/api/dev/send-mail`, {
         name,
@@ -79,6 +79,19 @@ class contact extends Component {
             {sending && <p className="sending-message">Sending...</p>}
             {sent && <p className="sent-message">Email sent successfully!</p>}
           </form>
+
+          <div class="cv-container">
+            <h1>My Curriculum Vitae</h1>
+            <iframe
+              src="assets/your-cv.pdf"
+              width="100%"
+              height="600px"
+            ></iframe>
+            <a href="assets/your-cv.pdf" download class="download-btn">
+              Download CV (PDF)
+            </a>
+          </div>
+          
         </div>
       </div>
     );
