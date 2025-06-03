@@ -6,6 +6,7 @@ class Showcase extends Component {
     this.state = {
       currentIndex: 0,
       isHovered: false,
+      fade: true,
     };
     this.slideInterval = null;
   }
@@ -23,21 +24,32 @@ class Showcase extends Component {
       if (!this.state.isHovered) {
         this.goToNextSlide();
       }
-    }, 4000); // Slide every 4 seconds
+    }, 4000);
   };
 
   goToNextSlide = () => {
     const { devs } = this.props;
-    this.setState((prevState) => ({
-      currentIndex: (prevState.currentIndex + 1) % devs.length,
-    }));
+    this.setState({ fade: false }, () => {
+      setTimeout(() => {
+        this.setState((prevState) => ({
+          currentIndex: (prevState.currentIndex + 1) % devs.length,
+          fade: true,
+        }));
+      }, 300); // match CSS fade-out duration
+    });
   };
 
   goToPreviousSlide = () => {
     const { devs } = this.props;
-    this.setState((prevState) => ({
-      currentIndex: (prevState.currentIndex - 1 + devs.length) % devs.length,
-    }));
+    this.setState({ fade: false }, () => {
+      setTimeout(() => {
+        this.setState((prevState) => ({
+          currentIndex:
+            (prevState.currentIndex - 1 + devs.length) % devs.length,
+          fade: true,
+        }));
+      }, 300);
+    });
   };
 
   handleMouseEnter = () => {
@@ -50,9 +62,8 @@ class Showcase extends Component {
 
   render() {
     const { devs } = this.props;
-    const { currentIndex } = this.state;
+    const { currentIndex, fade } = this.state;
 
-    // 💥 If no devs yet, show a loading state or nothing
     if (!devs || devs.length === 0) {
       return <div className="slideshowContainer">Loading projects...</div>;
     }
@@ -65,7 +76,12 @@ class Showcase extends Component {
         onMouseEnter={this.handleMouseEnter}
         onMouseLeave={this.handleMouseLeave}
       >
-        <div className="slide fadeIn">
+        {/* Left Button */}
+        <button className="navButton left" onClick={this.goToPreviousSlide}>
+          ❮
+        </button>
+
+        <div className={`slide ${fade ? "fadeIn" : "fadeOut"}`}>
           <img src={dev.imageUrl} alt={dev.name} className="slideImage" />
           <div className="slideDetails">
             <h2>{dev.name}</h2>
@@ -91,6 +107,11 @@ class Showcase extends Component {
             )}
           </div>
         </div>
+
+        {/* Right Button */}
+        <button className="navButton right" onClick={this.goToNextSlide}>
+          ❯
+        </button>
       </div>
     );
   }

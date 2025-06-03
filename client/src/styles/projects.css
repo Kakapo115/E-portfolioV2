@@ -1,139 +1,57 @@
-.showcaseContainer {
-  width: 90%;
-  margin: 0 auto;
-  display: flex;
-  justify-content: center;
-  border-radius: 10px;
-  overflow: hidden; 
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
-}
-
-.showcaseItem {
-  flex: 1 1;
-  min-width: 150px;
-  transition: transform 0.3s ease-in-out, flex 0.3s ease-in-out, height 0.3s ease-in-out;
-  font-size: 16px;
-  position: relative;
-  overflow: hidden;
-  cursor: pointer;
-  height: 600px; /* Set an initial height */
-}
-
-/* Hover expansion for larger screens */
-.showcaseItem:hover {
-  flex: 3 1;
-}
-
-/* Expand the clicked item in mobile view */
-.showcaseItem.expanded {
-  flex: 3 1;
-  width: 100%;
-  height: 600px;
-  
-}
-
-.showcaseItem:not(:hover) {
-  flex: 0.5 1; /* Shrinks the non-hovered items */
-}
-
-.showcaseImg {
-  width: 100%;
-  max-height: 100%;
-  display: block;
-  object-fit: cover;
-  height: 100%; 
-}
-
-/* Lighter overlay with name visible before hover */
-.showcaseDetails {
+.navButton {
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(0, 0, 0, 0.4); /* Lighter overlay background */
-  color: #fff;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  opacity: 1; /* Always visible */
-  transition: opacity 0.3s ease-in-out, background-color 0.3s ease-in-out;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(50, 50, 50, 0.6);
+  border: none;
+  color: white;
+  font-size: 2rem;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  z-index: 10;
+  border-radius: 50%;
+  transition: background-color 0.3s ease;
 }
 
-/* Darken the overlay and show more details on hover */
-.showcaseItem:hover .showcaseDetails {
-  background: rgba(0, 0, 0, 0.6); /* Darker background on hover */
-  opacity: 1;
+.navButton:hover {
+  background-color: rgba(80, 80, 80, 0.9);
 }
 
-/* Hide additional details until hover */
-.showcaseDetails p {
-  display: none;
+.navButton.left {
+  left: 10px;
 }
 
-.showcaseItem:hover .showcaseDetails p {
-  display: block;
+.navButton.right {
+  right: 10px;
 }
 
-ul {
-  list-style-type: none; /* Removes bullet points */
-  padding: 0;
-  text-align: center;
+/* Fade Transitions */
+.fadeIn {
+  animation: fadeInSlide 0.5s ease-in-out;
 }
 
-li {
-  margin: 5px 0;
+.fadeOut {
+  animation: fadeOutSlide 0.3s ease-in-out;
 }
 
-.projLink {
-  color: #fff;
-  font-size: 24px;
-}
-.projLink:hover {
-  color: purple;
-}
-.projLink:active{
-  color: rgb(245, 0, 245);;
-}
-
-.slideshowContainer {
-  position: relative;
-  width: 100%;
-  max-width: 600px;
-  margin: 0 auto;
-  overflow: hidden;
-  padding: 1rem;
-  text-align: center;
-  border-radius: 12px;
-  background-color: #f0f0f0;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-}
-
-.slide {
-  animation: fadeIn 0.8s ease-in-out;
-  transition: all 0.5s ease-in-out;
-}
-
-.slideImage {
-  width: 100%;
-  height: auto;
-  border-radius: 8px;
-}
-
-.slideDetails {
-  margin-top: 1rem;
-  opacity: 1;
-  transition: opacity 0.5s;
-}
-
-@keyframes fadeIn {
+@keyframes fadeInSlide {
   from {
     opacity: 0;
-    transform: translateX(40px);
+    transform: translateX(20px);
   }
   to {
     opacity: 1;
     transform: translateX(0);
+  }
+}
+
+@keyframes fadeOutSlide {
+  from {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateX(-20px);
   }
 }
