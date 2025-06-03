@@ -56,8 +56,8 @@
 }
 
 .slideImage {
-  height: 400px;      /* Set desired fixed height */
-  object-fit: cover;  /* Crop to fit nicely */
+  height: 400px; /* Set desired fixed height */
+  object-fit: cover; /* Crop to fit nicely */
   border-radius: 10px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
@@ -82,4 +82,44 @@
     opacity: 0;
     transform: translateX(-20px);
   }
+}
+
+/* Shared nav zone styles */
+.navZone {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 25%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.3s ease;
+  z-index: 2;
+  background: rgba(0, 0, 0, 0); /* Invisible but clickable */
+}
+
+.navZone:hover {
+  background: rgba(0, 0, 0, 0.05); /* Slightly visible on hover */
+}
+
+/* Position each nav zone */
+.leftZone {
+  left: 0;
+}
+
+.rightZone {
+  right: 0;
+}
+
+/* Arrow styling */
+.arrow {
+  font-size: 3rem;
+  color: rgba(0, 0, 0, 0.3); /* Light when idle */
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.navZone:hover .arrow {
+  color: rgba(0, 0, 0, 0.8); /* Darker on hover */
+  transform: scale(1.2);
 }

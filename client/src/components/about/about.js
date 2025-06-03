@@ -87,15 +87,19 @@ class AboutSlideshow extends Component {
         onMouseEnter={this.handleMouseEnter}
         onMouseLeave={this.handleMouseLeave}
       >
+        {/* Left Button */}
+        <button className="navButton left" onClick={this.goToPreviousSlide}>
+          ❮
+        </button>
         <div className="slide fadeIn">
           <h1>{title}</h1>
           <p>{content}</p>
         </div>
-
-        <div className="slideControls">
-          <button onClick={this.goToPreviousSlide}>←</button>
-          <button onClick={this.goToNextSlide}>→</button>
-        </div>
+        {/* Right Button */}
+        <button
+          className="navButton right"
+          onClick={this.goToNextSlide}
+        ></button>
       </div>
     );
   }

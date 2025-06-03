@@ -77,9 +77,14 @@ class Showcase extends Component {
         onMouseLeave={this.handleMouseLeave}
       >
         {/* Left Button */}
-        <button className="navButton left" onClick={this.goToPreviousSlide}>
-          ❮
-        </button>
+        <div
+          className="navZone leftZone"
+          onClick={this.goToPreviousSlide}
+          onMouseEnter={this.handleMouseEnter}
+          onMouseLeave={this.handleMouseLeave}
+        >
+          <span className="arrow">&#10094;</span> {/* ← */}
+        </div>
 
         <div className={`slide ${fade ? "fadeIn" : "fadeOut"}`}>
           <div className="slideContent">
@@ -113,9 +118,14 @@ class Showcase extends Component {
         </div>
 
         {/* Right Button */}
-        <button className="navButton right" onClick={this.goToNextSlide}>
-          ❯
-        </button>
+        <div
+          className="navZone rightZone"
+          onClick={this.goToNextSlide}
+          onMouseEnter={this.handleMouseEnter}
+          onMouseLeave={this.handleMouseLeave}
+        >
+          <span className="arrow">&#10095;</span> {/* → */}
+        </div>
       </div>
     );
   }
