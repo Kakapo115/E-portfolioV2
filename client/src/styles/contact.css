@@ -1,54 +1,46 @@
 .form-group {
-    margin-bottom: 15px;
-  }
-  .form-group input,
-  .form-group textarea {
-    width: 40%;
-    padding: 8px;
-    border: none;
-    background-color: rgba(255, 255, 255, 0.8);
-    color: black;
-    border-radius: 5px;
-    resize: none;
-    transition: background-color 0.3s ease;
-    box-shadow: 3px 3px #888888;
-  }
-  .form-group textarea {
-    height: 100px;
-  }
-  .form-group input:hover,
-  .form-group textarea:hover,
-  .form-group input:active,
-  .form-group textarea:active {
-    background-color: rgba(174, 174, 174, 0.9);
-  }
-  .form-group button {
-    background-color: #3c096cda;
-    border: none;
-    padding: 10px 50px;
-    color: #e0aaff;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    box-shadow: 3px 3px #10002b;
-  }
-  .form-group button:hover {
-    background-color: rgb(157, 92, 157);
-  }
-  .sending-message {
-    color: black;
-    font-style: italic;
-  }
-  .sent-message {
-    color: black;
-  }
-  .cv-container {
-  max-width: 800px;
-  margin: auto;
-  background-color: #fff;
-  padding: 2rem;
-  border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  margin-bottom: 15px;
+}
+.form-group input,
+.form-group textarea {
+  width: 40%;
+  padding: 8px;
+  border: none;
+  background-color: rgba(255, 255, 255, 0.8);
+  color: black;
+  border-radius: 5px;
+  resize: none;
+  transition: background-color 0.3s ease;
+  box-shadow: 3px 3px #888888;
+}
+.form-group textarea {
+  height: 100px;
+}
+.form-group input:hover,
+.form-group textarea:hover,
+.form-group input:active,
+.form-group textarea:active {
+  background-color: rgba(174, 174, 174, 0.9);
+}
+.form-group button {
+  background-color: #3c096cda;
+  border: none;
+  padding: 10px 50px;
+  color: #e0aaff;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  box-shadow: 3px 3px #10002b;
+}
+.form-group button:hover {
+  background-color: rgb(157, 92, 157);
+}
+.sending-message {
+  color: black;
+  font-style: italic;
+}
+.sent-message {
+  color: black;
 }
 
 .download-btn {
