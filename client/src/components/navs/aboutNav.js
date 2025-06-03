@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-import About from "../aboutInfos/aboutMe";
-import Career from "../aboutInfos/career";
-import Education from "../aboutInfos/education";
+import About from "../about/aboutMe";
+import Career from "../about/career";
+import Education from "../about/education";
 
 class aboutNav extends Component {
   constructor(props) {

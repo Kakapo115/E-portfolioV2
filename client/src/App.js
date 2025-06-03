@@ -2,8 +2,8 @@ import "./styles/App.css";
 import Footer from "./components/footer";
 import Header from "./components/header";
 import Contact from "./components/contact";
-import About from "./components/about";
-import Projects from "./components/projects";
+import About from "./components/about/about";
+import Projects from "./components/project/projects";
 import { useState } from "react";
 
 function App() {
