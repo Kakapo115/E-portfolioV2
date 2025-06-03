@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
-import Showcase from "../projectInfos/showcase";
+import Showcase from "/showcase";
 
 class projects extends Component {
   constructor(props) {
