@@ -5,3 +5,36 @@
     align-content: center;
     font-size: 36px;
   }
+
+  .aboutSlideshowContainer {
+  text-align: center;
+  padding: 2rem;
+  max-width: 700px;
+  margin: auto;
+}
+
+.slide {
+  transition: opacity 0.6s ease-in-out;
+  animation: fadeIn 0.8s ease-in;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.slideControls {
+  margin-top: 1rem;
+}
+
+.slideControls button {
+  margin: 0 10px;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+}
