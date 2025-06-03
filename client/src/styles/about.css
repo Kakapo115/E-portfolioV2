@@ -28,13 +28,3 @@
     transform: translateY(0);
   }
 }
-
-.slideControls {
-  margin-top: 1rem;
-}
-
-.slideControls button {
-  margin: 0 10px;
-  padding: 0.5rem 1rem;
-  cursor: pointer;
-}
