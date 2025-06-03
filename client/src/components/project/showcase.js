@@ -82,29 +82,33 @@ class Showcase extends Component {
         </button>
 
         <div className={`slide ${fade ? "fadeIn" : "fadeOut"}`}>
-          <img src={dev.imageUrl} alt={dev.name} className="slideImage" />
-          <div className="slideDetails">
-            <h2>{dev.name}</h2>
-            <p>{dev.description}</p>
-            <p>
-              <strong>Skills:</strong>{" "}
-              {dev.skills.split(", ").map((skill, i) => (
-                <span key={i} className="skill">
-                  {skill}
-                  {i < dev.skills.split(", ").length - 1 && ", "}
-                </span>
-              ))}
-            </p>
-            {dev.url && (
-              <a
-                href={dev.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="projLink"
-              >
-                Visit Project
-              </a>
-            )}
+          <div className="slideContent">
+            <div className="slideText">
+              <h2>{dev.name}</h2>
+              <p>{dev.description}</p>
+              <p>
+                <strong>Skills:</strong>{" "}
+                {dev.skills.split(", ").map((skill, i) => (
+                  <span key={i} className="skill">
+                    {skill}
+                    {i < dev.skills.split(", ").length - 1 && ", "}
+                  </span>
+                ))}
+              </p>
+              {dev.url && (
+                <a
+                  href={dev.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="projLink"
+                >
+                  Visit Project
+                </a>
+              )}
+            </div>
+            <div className="slideImageContainer">
+              <img src={dev.imageUrl} alt={dev.name} className="slideImage" />
+            </div>
           </div>
         </div>
 
