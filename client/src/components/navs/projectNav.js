@@ -1,75 +1,38 @@
 import React, { Component } from "react";
-import axios from "axios"; // Make sure axios is imported
+import axios from "axios";
 import Showcase from "../projectInfos/showcase";
 
 class ProjectNav extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      selectedSubComponent: "webDev", // Handles internal component switching
-      devs: [], // Store fetched data here
+      devs: [],
     };
   }
 
   componentDidMount() {
-    // Fetch initial data for the default selectedSubComponent
-    this.fetchDevData(this.state.selectedSubComponent);
+    this.fetchAllDevs();
   }
 
-  fetchDevData = (type) => {
-    // Make the API call to fetch the data from your server
+  fetchAllDevs = () => {
     const apiBaseUrl = process.env.REACT_APP_API_BASE_URL;
     axios
-      .get(`${apiBaseUrl}/api/dev?type=${type}`)
+      .get(`${apiBaseUrl}/api/dev`) // No type param = get all
       .then((response) => {
-        const devs = response.data;
-        this.setState({
-          devs: devs,
-        });
+        this.setState({ devs: response.data });
       })
       .catch((error) => {
-        console.log(error);
+        console.error("Error fetching devs:", error);
       });
   };
 
-  setSelectedSubComponent = (component) => {
-    this.setState({ selectedSubComponent: component }, () => {
-      this.fetchDevData(component);
-    });
-  };
-
-  renderSubComponent() {
+  render() {
     const { devs } = this.state;
 
-    return <Showcase devs={devs} />;
-  }
-
-  render() {
     return (
       <div className="header">
-        <div className="navContainer">
-          <button
-            className="navButton"
-            onClick={() => this.setSelectedSubComponent("webDev")}
-          >
-            Web Development
-          </button>
-          <button
-            className="navButton"
-            onClick={() => this.setSelectedSubComponent("appDev")}
-          >
-            App Development
-          </button>
-          <button
-            className="navButton"
-            onClick={() => this.setSelectedSubComponent("otherDev")}
-          >
-            Other Development
-          </button>
-          <hr />
-        </div>
-        {/* Render the selected sub-component */}
-        <div>{this.renderSubComponent()}</div>
+        <h1>All Projects</h1>
+        <Showcase devs={devs} />
       </div>
     );
   }
