@@ -76,18 +76,14 @@ class Showcase extends Component {
         onMouseEnter={this.handleMouseEnter}
         onMouseLeave={this.handleMouseLeave}
       >
-        {/* Left Button */}
-        <div
-          className="navZone leftZone"
-          onClick={this.goToPreviousSlide}
-          onMouseEnter={this.handleMouseEnter}
-          onMouseLeave={this.handleMouseLeave}
-        >
-          <span className="arrow">&#10094;</span> {/* ← */}
-        </div>
+        <div className="slideshowRow">
+          {/* Left Arrow */}
+          <div className="navZone leftZone" onClick={this.goToPreviousSlide}>
+            <span className="arrow">&#10094;</span>
+          </div>
 
-        <div className={`slide ${fade ? "fadeIn" : "fadeOut"}`}>
-          <div className="slideContent">
+          {/* Slide Content */}
+          <div className={`slide ${fade ? "fadeIn" : "fadeOut"}`}>
             <div className="slideText">
               <h2>{dev.name}</h2>
               <p>{dev.description}</p>
@@ -115,16 +111,11 @@ class Showcase extends Component {
               <img src={dev.imageUrl} alt={dev.name} className="slideImage" />
             </div>
           </div>
-        </div>
 
-        {/* Right Button */}
-        <div
-          className="navZone rightZone"
-          onClick={this.goToNextSlide}
-          onMouseEnter={this.handleMouseEnter}
-          onMouseLeave={this.handleMouseLeave}
-        >
-          <span className="arrow">&#10095;</span> {/* → */}
+          {/* Right Arrow */}
+          <div className="navZone rightZone" onClick={this.goToNextSlide}>
+            <span className="arrow">&#10095;</span>
+          </div>
         </div>
       </div>
     );
