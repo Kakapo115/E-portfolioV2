@@ -9,19 +9,6 @@ import { useState } from "react";
 function App() {
   const [selectedComponent, setSelectedComponent] = useState("about");
 
-  const getBackgroundImage = () => {
-    switch (selectedComponent) {
-      case "contact":
-        return "url('/midjour_basecamp_topcut.png')"; // Example background for Contact
-      case "about":
-        return "url('/midjour_climbin.png')"; // Example background for About
-      case "projects":
-        return "url('/midjour_topvalley.png')"; // Example background for Projects
-      default:
-        return "url('/Wh46bS2Gw8vUC6iQh2wEd6-1200-80.png')"; // Default background
-    }
-  };
-
   const renderComponent = () => {
     switch (selectedComponent) {
       case "contact":
@@ -36,16 +23,7 @@ function App() {
   };
 
   return (
-    <div
-      className="App"
-      style={{
-        backgroundImage: getBackgroundImage(),
-        backgroundSize: "cover",
-        backgroundPosition: "center center",
-        backgroundAttachment: "fixed",
-        transition: "background-image 0.5s ease",
-      }}
-    >
+    <div className="App">
       <Header />
       <div className="navContainer">
         <div className="mainNav">
@@ -55,10 +33,7 @@ function App() {
           >
             Contact
           </button>
-          <button
-            className="nav"
-            onClick={() => setSelectedComponent("about")}
-          >
+          <button className="nav" onClick={() => setSelectedComponent("about")}>
             About
           </button>
           <button

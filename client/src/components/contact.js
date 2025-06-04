@@ -79,14 +79,16 @@ class contact extends Component {
             {sending && <p className="sending-message">Sending...</p>}
             {sent && <p className="sent-message">Email sent successfully!</p>}
           </form>
-
-          <div class="cv-container">
-            <h1>My Curriculum Vitae</h1>
-            <a href="assets/RickySyme-CV-SoftwareDev.docx.pdf" download class="download-btn">
-              Download CV (PDF)
-            </a>
-          </div>
-
+        </div>
+        <div class="cv-container">
+          <h1>My Curriculum Vitae</h1>
+          <a
+            href="assets/RickySyme-CV-SoftwareDev.docx.pdf"
+            download
+            class="download-btn"
+          >
+            Download CV (PDF)
+          </a>
         </div>
       </div>
     );
