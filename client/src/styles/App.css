@@ -61,6 +61,7 @@ hr{
   top: 0;
   background-color: blueviolet;
   width: 100%;
+  display: flex;
 }
 
 footer{
