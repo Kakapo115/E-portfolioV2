@@ -30,7 +30,7 @@ class projects extends Component {
     const { devs } = this.state;
 
     return (
-      <div className="header">
+      <div className="project">
         <h1>All Projects</h1>
         <Showcase devs={devs} />
       </div>

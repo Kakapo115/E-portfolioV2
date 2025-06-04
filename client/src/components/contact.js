@@ -43,7 +43,7 @@ class contact extends Component {
     const { name, email, message, sent, sending } = this.state;
 
     return (
-      <div className="header">
+      <div className="contact">
         <div className="contactform">
           <h1>Contact Me</h1>
           <form onSubmit={this.handleFormSubmit}>
