@@ -14,12 +14,12 @@ html, body, #root {
 .App {
   min-height: 100vh; /* Ensure it covers the full viewport height */
   width: 100vw;
-  display: flex;
+  /* display: flex;
   flex-direction: column;
   text-align: center;
   background-size: cover;
-  background-position: center; /* Center background image */
-  background-repeat: no-repeat;
+  background-position: center;
+  background-repeat: no-repeat; */
 }
 
 hr{
