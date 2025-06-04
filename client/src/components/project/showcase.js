@@ -86,6 +86,7 @@ class Showcase extends Component {
           <div className={`slide ${fade ? "fadeIn" : "fadeOut"}`}>
             <div className="slideText">
               <h2>{dev.name}</h2>
+              <p>{dev.type}</p>
               <p>{dev.description}</p>
               <p>
                 <strong>Skills:</strong>{" "}
