@@ -84,43 +84,37 @@
   }
 }
 
-/* Shared nav zone styles */
+/* Update nav zones to no longer be absolute */
 .navZone {
-  position: absolute;
-  width: 25%;
-  cursor: pointer;
+  width: 10%; /* Or 15% depending on your design */
+  height: auto;
   display: flex;
   align-items: center;
   justify-content: center;
+  background: none;
+  cursor: pointer;
   transition: background 0.3s ease;
-  z-index: 2;
-  background: rgba(0, 0, 0, 0); /* Invisible but clickable */
 }
 
 .navZone:hover {
   background: rgba(0, 0, 0, 0.05); /* Slightly visible on hover */
 }
 
-/* Position each nav zone */
-/* LEFT fade zone */
+/* On hover they fade in */
 .leftZone {
-  left: 0;
-  background: linear-gradient(to right, rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0));
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.1), transparent);
 }
 
-/* RIGHT fade zone */
 .rightZone {
-  right: 0;
-  background: linear-gradient(to left, rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0));
+  background: linear-gradient(to left, rgba(0, 0, 0, 0.1), transparent);
 }
 
-/* Make fade stronger on hover */
 .navZone:hover.leftZone {
-  background: linear-gradient(to right, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0));
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.3), transparent);
 }
 
 .navZone:hover.rightZone {
-  background: linear-gradient(to left, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0));
+  background: linear-gradient(to left, rgba(0, 0, 0, 0.3), transparent);
 }
 
 /* Arrow styling */
