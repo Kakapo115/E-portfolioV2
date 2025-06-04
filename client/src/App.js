@@ -24,28 +24,7 @@ function App() {
 
   return (
     <div className="App">
-      <Header />
-      <div className="navContainer">
-        <div className="mainNav">
-          <button
-            className="nav"
-            onClick={() => setSelectedComponent("contact")}
-          >
-            Contact
-          </button>
-          <button className="nav" onClick={() => setSelectedComponent("about")}>
-            About
-          </button>
-          <button
-            className="nav"
-            onClick={() => setSelectedComponent("projects")}
-          >
-            Projects
-          </button>
-          <hr />
-        </div>
-      </div>
-      {/* Renders the selected component */}
+      <Header setSelectedComponent={setSelectedComponent} />
       <div>{renderComponent()}</div>
       <Footer />
     </div>
