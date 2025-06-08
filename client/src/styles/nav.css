@@ -16,11 +16,27 @@
 }
 
 .navContainer {
-  display: inline-block;
-  text-align: center;
+  display: flex;
+  justify-content: center; /* centers the nav inside header */
+  align-items: center;
+  margin-top: 10px;
 }
 
 .mainNav {
-  display: inline-block;
+  display: flex;
+  gap: 1rem; /* spacing between buttons */
+}
+
+.header{
+  position: fixed;
+  top: 0;
+  background-color: blueviolet;
+  width: 100%;
+  display: flex;
+  flex-direction: column; /* Stack title above nav */
+  align-items: center;     /* Center items horizontally */
+  height: 100px;           /* Increase height to fit title + nav */
+  padding: 10px 0;
   text-align: center;
+  z-index: 1000;
 }
