@@ -1,30 +1,41 @@
 import React, { Component } from "react";
 
 class Header extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      isMenuOpen: false,
+    };
+  }
+
+  toggleMenu = () => {
+    this.setState((prevState) => ({
+      isMenuOpen: !prevState.isMenuOpen,
+    }));
+  };
+
   render() {
     const { setSelectedComponent } = this.props;
+    const { isMenuOpen } = this.state;
 
     return (
       <div className="header">
-        <h1>Ricky Syme's E-Portfolio</h1>
-        <div className="navContainer">
+        <h1 className="siteTitle">Ricky Syme's E-Portfolio</h1>
+
+        {/* Hamburger icon */}
+        <button className="hamburger" onClick={this.toggleMenu}>
+          ☰
+        </button>
+
+        <div className={`navContainer ${isMenuOpen ? "open" : ""}`}>
           <div className="mainNav">
-            <button
-              className="nav"
-              onClick={() => setSelectedComponent("contact")}
-            >
+            <button className="nav" onClick={() => setSelectedComponent("contact")}>
               Contact
             </button>
-            <button
-              className="nav"
-              onClick={() => setSelectedComponent("about")}
-            >
+            <button className="nav" onClick={() => setSelectedComponent("about")}>
               About
             </button>
-            <button
-              className="nav"
-              onClick={() => setSelectedComponent("projects")}
-            >
+            <button className="nav" onClick={() => setSelectedComponent("projects")}>
               Projects
             </button>
           </div>

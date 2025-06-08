@@ -1,9 +1,56 @@
+/* Header container styles */
+.header {
+  position: fixed;
+  top: 0;
+  background-color: blueviolet;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: auto;
+  padding: 10px 0;
+  text-align: center;
+  z-index: 1000;
+}
+
+.siteTitle {
+  font-size: 1.8rem;
+  margin: 0;
+  padding: 0;
+}
+
+/* Hamburger button */
+.hamburger {
+  display: none;
+  font-size: 2rem;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  margin-top: 5px;
+}
+
+/* Normal nav layout (desktop) */
+.navContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 5px;
+}
+
+.mainNav {
+  display: flex;
+  gap: 1rem;
+}
+
+/* Nav button styles */
 .nav {
-  font-size: 30px;
+  font-size: 20px;
   padding: 10px;
   margin: 5px;
-  border: 0px;
+  border: 0;
   background-color: transparent;
+  color: white;
   transition: color 200ms, font-size 200ms;
 }
 
@@ -15,28 +62,33 @@
   color: rgb(245, 0, 245);
 }
 
-.navContainer {
-  display: flex;
-  justify-content: center; /* centers the nav inside header */
-  align-items: center;
-  margin-top: 10px;
-}
+/* =============== Responsive: Mobile View =============== */
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
 
-.mainNav {
-  display: flex;
-  gap: 1rem; /* spacing between buttons */
-}
+  .navContainer {
+    display: none;
+    width: 100%;
+  }
 
-.header{
-  position: fixed;
-  top: 0;
-  background-color: blueviolet;
-  width: 100%;
-  display: flex;
-  flex-direction: column; /* Stack title above nav */
-  align-items: center;     /* Center items horizontally */
-  height: 100px;           /* Increase height to fit title + nav */
-  padding: 10px 0;
-  text-align: center;
-  z-index: 1000;
+  .navContainer.open {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .mainNav {
+    flex-direction: column;
+    gap: 0.5rem;
+    width: 100%;
+  }
+
+  .nav {
+    font-size: 18px;
+    width: 100%;
+    padding: 12px;
+    background-color: rgba(255, 255, 255, 0.1);
+  }
 }
