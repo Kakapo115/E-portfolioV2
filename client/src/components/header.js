@@ -20,26 +20,26 @@ class Header extends Component {
 
     return (
       <div className="header">
-        <h1 className="siteTitle">Ricky Syme's E-Portfolio</h1>
-
-        {/* Right side wrapper (hamburger + nav) */}
-        <div className="rightSection">
+        {/* Title and hamburger side-by-side */}
+        <div className="menuRow">
+          <h1 className="siteTitle">Ricky Syme's E-Portfolio</h1>
           <button className="hamburger" onClick={this.toggleMenu}>
             ☰
           </button>
+        </div>
 
-          <div className={`navContainer ${isMenuOpen ? "open" : ""}`}>
-            <div className="mainNav">
-              <button className="nav" onClick={() => setSelectedComponent("contact")}>
-                Contact
-              </button>
-              <button className="nav" onClick={() => setSelectedComponent("about")}>
-                About
-              </button>
-              <button className="nav" onClick={() => setSelectedComponent("projects")}>
-                Projects
-              </button>
-            </div>
+        {/* Menu appears *below* row on small screens */}
+        <div className={`navContainer ${isMenuOpen ? "open" : ""}`}>
+          <div className="mainNav">
+            <button className="nav" onClick={() => setSelectedComponent("contact")}>
+              Contact
+            </button>
+            <button className="nav" onClick={() => setSelectedComponent("about")}>
+              About
+            </button>
+            <button className="nav" onClick={() => setSelectedComponent("projects")}>
+              Projects
+            </button>
           </div>
         </div>
       </div>

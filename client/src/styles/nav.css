@@ -1,30 +1,27 @@
-/* Header container styles */
+/* Entire header area */
 .header {
   position: fixed;
   top: 0;
   background-color: blueviolet;
   width: 100%;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-  padding: 10px;
   z-index: 1000;
-  flex-wrap: wrap;
+  padding: 10px;
+  box-sizing: border-box;
 }
 
+/* Top row: title and hamburger */
+.menuRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+/* Title style */
 .siteTitle {
   font-size: 1.8rem;
   margin: 0;
-  padding: 0;
   color: white;
-}
-
-/* Wraps nav + hamburger to push them right */
-.rightSection {
-  display: flex;
-  align-items: center;
-  margin-left: auto;
 }
 
 /* Hamburger button */
@@ -35,14 +32,14 @@
   border: none;
   color: white;
   cursor: pointer;
-  margin-left: 10px;
 }
 
-/* Nav container desktop */
+/* Nav container (buttons row) */
 .navContainer {
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
   align-items: center;
+  margin-top: 5px;
 }
 
 .mainNav {
@@ -50,7 +47,7 @@
   gap: 1rem;
 }
 
-/* Nav button styles */
+/* Nav buttons */
 .nav {
   font-size: 20px;
   padding: 10px;
@@ -69,32 +66,21 @@
   color: rgb(245, 0, 245);
 }
 
-/* =============== Responsive: Mobile View =============== */
+/* ============ Responsive: Mobile ============ */
 @media (max-width: 768px) {
-  .header {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .rightSection {
-    width: 100%;
-    justify-content: space-between;
-    margin-left: 0;
-  }
-
   .hamburger {
     display: block;
   }
 
   .navContainer {
     display: none;
+    flex-direction: column;
+    align-items: center;
     width: 100%;
   }
 
   .navContainer.open {
     display: flex;
-    flex-direction: column;
-    align-items: center;
   }
 
   .mainNav {
@@ -104,8 +90,8 @@
   }
 
   .nav {
-    font-size: 18px;
     width: 100%;
+    font-size: 18px;
     padding: 12px;
     background-color: rgba(255, 255, 255, 0.1);
   }
