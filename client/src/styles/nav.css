@@ -17,6 +17,26 @@
   width: 100%;
 }
 
+/* Show the nav on desktop */
+@media (min-width: 769px) {
+  .navContainer {
+    display: flex !important; /* always show nav on large screens */
+    justify-content: flex-end;
+    align-items: center;
+    margin-top: 0;
+    flex: 1;
+  }
+
+  .mainNav {
+    flex-direction: row;
+    gap: 1rem;
+  }
+
+  .hamburger {
+    display: none; /* hide hamburger on desktop */
+  }
+}
+
 /* Title style */
 .siteTitle {
   font-size: 1.8rem;
