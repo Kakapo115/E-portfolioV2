@@ -1,4 +1,4 @@
-/* Entire header area */
+/* ======== Entire header area ======== */
 .header {
   position: fixed;
   top: 0;
@@ -9,42 +9,22 @@
   box-sizing: border-box;
 }
 
-/* Top row: title and hamburger */
+/* ======== Top row: title and hamburger ======== */
 .menuRow {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  flex-wrap: wrap; /* allows menu to break to next line on small screens */
+  flex-wrap: wrap;
 }
 
-/* Show the nav on desktop */
-@media (min-width: 769px) {
-  .navContainer {
-    display: flex !important; /* always show nav on large screens */
-    justify-content: flex-end;
-    align-items: center;
-    margin-top: 0;
-    flex: 1;
-  }
-
-  .mainNav {
-    flex-direction: row;
-    gap: 1rem;
-  }
-
-  .hamburger {
-    display: none; /* hide hamburger on desktop */
-  }
-}
-
-/* Title style */
+/* ======== Title style ======== */
 .siteTitle {
   font-size: 1.8rem;
   margin: 0;
   color: white;
 }
 
-/* Hamburger button */
+/* ======== Hamburger button ======== */
 .hamburger {
   display: none;
   font-size: 2rem;
@@ -54,20 +34,48 @@
   cursor: pointer;
 }
 
-/* Nav container (buttons row) */
+/* ======== Nav container base (hidden by default on mobile) ======== */
 .navContainer {
   display: flex;
-  justify-content: flex-end;
+  flex-direction: column;
   align-items: center;
-  margin-top: 5px;
+  width: 100%;
+
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease, opacity 0.4s ease;
 }
 
+/* ======== Nav shown when open ======== */
+.navContainer.open {
+  max-height: 300px;
+  opacity: 1;
+}
+
+/* ======== Animate nav buttons in mobile view ======== */
+.navContainer.open .nav {
+  animation: fadeInUp 0.3s ease forwards;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ======== Main nav layout ======== */
 .mainNav {
   display: flex;
   gap: 1rem;
 }
 
-/* Nav buttons */
+/* ======== Nav buttons ======== */
 .nav {
   font-size: 20px;
   padding: 10px;
@@ -86,21 +94,32 @@
   color: rgb(245, 0, 245);
 }
 
-/* ============ Responsive: Mobile ============ */
+/* ======== Responsive: Desktop View ======== */
+@media (min-width: 769px) {
+  .navContainer {
+    max-height: none;
+    opacity: 1;
+    overflow: visible;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    margin-top: 0;
+  }
+
+  .mainNav {
+    flex-direction: row;
+    gap: 1rem;
+  }
+
+  .hamburger {
+    display: none;
+  }
+}
+
+/* ======== Responsive: Mobile View ======== */
 @media (max-width: 768px) {
   .hamburger {
     display: block;
-  }
-
-  .navContainer {
-    display: none;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-  }
-
-  .navContainer.open {
-    display: flex;
   }
 
   .mainNav {
