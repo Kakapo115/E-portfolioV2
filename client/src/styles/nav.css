@@ -7,16 +7,24 @@
   display: flex;
   flex-direction: row;
   align-items: center;
-  height: auto;
-  padding: 0px 0px 0px 10px;
-  text-align: center;
+  justify-content: space-between;
+  padding: 10px;
   z-index: 1000;
+  flex-wrap: wrap;
 }
 
 .siteTitle {
   font-size: 1.8rem;
   margin: 0;
   padding: 0;
+  color: white;
+}
+
+/* Wraps nav + hamburger to push them right */
+.rightSection {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
 }
 
 /* Hamburger button */
@@ -27,15 +35,14 @@
   border: none;
   color: white;
   cursor: pointer;
-  margin-top: 5px;
+  margin-left: 10px;
 }
 
-/* Normal nav layout (desktop) */
+/* Nav container desktop */
 .navContainer {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 5px;
 }
 
 .mainNav {
@@ -64,6 +71,17 @@
 
 /* =============== Responsive: Mobile View =============== */
 @media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .rightSection {
+    width: 100%;
+    justify-content: space-between;
+    margin-left: 0;
+  }
+
   .hamburger {
     display: block;
   }
