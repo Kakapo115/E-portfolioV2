@@ -4,16 +4,49 @@ var router = express.Router();
 var devs = require("../../models/dev");
 
 // Email Service
+const axios = require("axios"); // Add this at the top
 const sendMail = require("../api/sendMail");
+
 router.post("/send-mail", async (req, res) => {
-  const { name, email, message } = req.body;
+  const { name, email, message, token } = req.body;
 
-  const success = await sendMail(name, email, message);
+  if (!token) {
+    return res.status(400).json({ success: false, message: "Missing reCAPTCHA token" });
+  }
 
-  if (success) {
-    return res.json({ success: true });
-  } else {
-    return res.status(500).json({ success: false });
+  try {
+    // Verify token with Google
+    const secretKey = process.env.RECAPTCHA_SECRET_KEY;
+    const verifyUrl = `https://www.google.com/recaptcha/api/siteverify`;
+
+    const response = await axios.post(
+      verifyUrl,
+      new URLSearchParams({
+        secret: secretKey,
+        response: token,
+      })
+    );
+
+    const verificationResult = response.data;
+
+    if (!verificationResult.success) {
+      return res.status(403).json({
+        success: false,
+        message: "Failed reCAPTCHA verification",
+      });
+    }
+
+    // Send mail if reCAPTCHA passed
+    const success = await sendMail(name, email, message);
+
+    if (success) {
+      return res.json({ success: true });
+    } else {
+      return res.status(500).json({ success: false, message: "Failed to send email" });
+    }
+  } catch (error) {
+    console.error("Error verifying reCAPTCHA:", error);
+    return res.status(500).json({ success: false, message: "Server error" });
   }
 });
 

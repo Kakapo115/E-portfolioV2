@@ -13,6 +13,9 @@ class contact extends Component {
       sending: false,
       sent: false,
     };
+
+    // Create a ref for the reCAPTCHA widget
+    this.recaptchaRef = React.createRef();
   }
 
   handleFormSubmit = async (e) => {
@@ -32,10 +35,20 @@ class contact extends Component {
         name,
         email,
         message,
-        captcha: captchaValue, // optional if backend verifies
+        token: captchaValue,
       });
+
       if (response.data.success) {
-        this.setState({ sent: true, sending: false });
+        this.setState({
+          sent: true,
+          sending: false,
+          captchaValue: null,
+        });
+
+        // Reset the CAPTCHA widget
+        if (this.recaptchaRef.current) {
+          this.recaptchaRef.current.reset();
+        }
       }
     } catch (error) {
       console.error("Error sending email: ", error);
@@ -89,6 +102,7 @@ class contact extends Component {
 
               <div className="form-group">
                 <ReCAPTCHA
+                  ref={this.recaptchaRef}
                   sitekey="6LchC1orAAAAACMkDD_7KWCUBUyq9iV8VRn6VDxn"
                   onChange={this.handleCaptchaChange}
                 />
