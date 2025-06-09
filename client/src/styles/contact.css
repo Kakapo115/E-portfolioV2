@@ -59,5 +59,13 @@
 
 .contact{
   padding: 80px 10px 0px 10px;
-  
+  align-items: center;
+}
+
+.contact-container {
+  width: 75%;
+  margin: 0 auto; /* centers the container horizontally */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }

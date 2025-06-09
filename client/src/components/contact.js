@@ -44,51 +44,54 @@ class contact extends Component {
 
     return (
       <div className="contact">
-        <div className="contactform">
-          <h1>Contact Me</h1>
-          <form onSubmit={this.handleFormSubmit}>
-            <div className="form-group">
-              <input
-                type="text"
-                name="name"
-                value={name}
-                placeholder="Your Name"
-                onChange={this.handleInputChange}
-              />
-            </div>
-            <div className="form-group">
-              <input
-                type="email"
-                name="email"
-                value={email}
-                placeholder="Your Email"
-                onChange={this.handleInputChange}
-              />
-            </div>
-            <div className="form-group">
-              <textarea
-                name="message"
-                value={message}
-                placeholder="Your Message"
-                onChange={this.handleInputChange}
-              ></textarea>
-            </div>
-            <div className="form-group">
-              <button type="submit">Send</button>
-            </div>
-            {sending && <p className="sending-message">Sending...</p>}
-            {sent && <p className="sent-message">Email sent successfully!</p>}
-          </form>
-        </div>
-        <div class="cv-container">
-          <h1>My Curriculum Vitae</h1>
-          <a
-            href="assets/RickySyme-CV-SoftwareDev.docx.pdf"
-            download
-            class="download-btn"
-          >
-            Download CV (PDF)
-          </a>
+        <div className="contact-container">
+          <div className="contactform">
+            <h1>Contact Me</h1>
+            <form onSubmit={this.handleFormSubmit}>
+              <div className="form-group">
+                <input
+                  type="text"
+                  name="name"
+                  value={name}
+                  placeholder="Your Name"
+                  onChange={this.handleInputChange}
+                />
+              </div>
+              <div className="form-group">
+                <input
+                  type="email"
+                  name="email"
+                  value={email}
+                  placeholder="Your Email"
+                  onChange={this.handleInputChange}
+                />
+              </div>
+              <div className="form-group">
+                <textarea
+                  name="message"
+                  value={message}
+                  placeholder="Your Message"
+                  onChange={this.handleInputChange}
+                ></textarea>
+              </div>
+              <div className="form-group">
+                <button type="submit">Send</button>
+              </div>
+              {sending && <p className="sending-message">Sending...</p>}
+              {sent && <p className="sent-message">Email sent successfully!</p>}
+            </form>
+          </div>
+
+          <div className="cv-container">
+            <h1>My Curriculum Vitae</h1>
+            <a
+              href="assets/RickySyme-CV-SoftwareDev.docx.pdf"
+              download
+              className="download-btn"
+            >
+              Download CV (PDF)
+            </a>
+          </div>
         </div>
       </div>
     );
