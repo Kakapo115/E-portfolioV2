@@ -4,6 +4,7 @@ class footer extends Component {
   render() {
     return (
       <footer>
+        <h1>Socials</h1>
         <div className="iconContainer">
           <a href="https://github.com/Kakapo115">
             <img src="GitHub-Logo.png" className="icon git" alt="GitHub-Logo" />
