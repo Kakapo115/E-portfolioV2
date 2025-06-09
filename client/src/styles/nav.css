@@ -9,7 +9,7 @@
   box-sizing: border-box;
 }
 
-/* ======== Top row: title and hamburger ======== */
+/* ======== Row layout for title + hamburger + nav ======== */
 .menuRow {
   display: flex;
   justify-content: space-between;
@@ -34,7 +34,7 @@
   cursor: pointer;
 }
 
-/* ======== Nav container base (hidden by default on mobile) ======== */
+/* ======== Base nav container (hidden by default on mobile) ======== */
 .navContainer {
   display: flex;
   flex-direction: column;
@@ -47,13 +47,12 @@
   transition: max-height 0.4s ease, opacity 0.4s ease;
 }
 
-/* ======== Nav shown when open ======== */
+/* ======== Opened nav (mobile only) ======== */
 .navContainer.open {
   max-height: 300px;
   opacity: 1;
 }
 
-/* ======== Animate nav buttons in mobile view ======== */
 .navContainer.open .nav {
   animation: fadeInUp 0.3s ease forwards;
 }
@@ -69,13 +68,12 @@
   }
 }
 
-/* ======== Main nav layout ======== */
+/* ======== Nav buttons ======== */
 .mainNav {
   display: flex;
   gap: 1rem;
 }
 
-/* ======== Nav buttons ======== */
 .nav {
   font-size: 20px;
   padding: 10px;
@@ -96,14 +94,19 @@
 
 /* ======== Responsive: Desktop View ======== */
 @media (min-width: 769px) {
+  .menuRow {
+    flex-wrap: nowrap;
+  }
+
   .navContainer {
-    max-height: none;
-    opacity: 1;
-    overflow: visible;
     flex-direction: row;
     justify-content: flex-end;
     align-items: center;
+    max-height: none;
+    opacity: 1;
+    overflow: visible;
     margin-top: 0;
+    width: auto;
   }
 
   .mainNav {

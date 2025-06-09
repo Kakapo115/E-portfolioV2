@@ -22,13 +22,9 @@ class Header extends Component {
       <div className="header">
         <div className="menuRow">
           <h1 className="siteTitle">Ricky Syme's E-Portfolio</h1>
-
-          {/* Hamburger (mobile only) */}
           <button className="hamburger" onClick={this.toggleMenu}>
             ☰
           </button>
-
-          {/* Nav (desktop or open mobile) */}
           <div className={`navContainer ${isMenuOpen ? "open" : ""}`}>
             <div className="mainNav">
               <button
