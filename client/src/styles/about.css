@@ -27,9 +27,9 @@
 .aboutSlideshowContainer {
   text-align: center;
   padding: 2rem;
-  max-width: none;
   margin: auto;
   padding: 80px 10px 0px 10px;
+  width: 75%;
 }
 
 .slide {

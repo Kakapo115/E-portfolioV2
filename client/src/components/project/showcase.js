@@ -70,6 +70,12 @@ class Showcase extends Component {
 
     const dev = devs[currentIndex];
 
+    const typeMap = {
+      webdev: "Web Development",
+      appdev: "App Development",
+      gamedev: "Game Development",
+    };
+
     return (
       <div
         className="slideshowContainer"
@@ -86,7 +92,7 @@ class Showcase extends Component {
           <div className={`slide ${fade ? "fadeIn" : "fadeOut"}`}>
             <div className="slideText">
               <h2>{dev.name}</h2>
-              <p>{dev.type}</p>
+              <p>{typeMap[dev.type] || dev.type}</p>
               <p>{dev.description}</p>
               <p>
                 <strong>Skills:</strong>{" "}
