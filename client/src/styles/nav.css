@@ -21,7 +21,7 @@
 .siteTitle {
   font-size: 1.8rem;
   margin: 0;
-  color: white;
+  color: black;
 }
 
 /* ======== Hamburger button ======== */
@@ -30,7 +30,7 @@
   font-size: 2rem;
   background: none;
   border: none;
-  color: white;
+  color: black;
   cursor: pointer;
 }
 
@@ -80,7 +80,7 @@
   margin: 5px;
   border: 0;
   background-color: transparent;
-  color: white;
+  color: black;
   transition: color 200ms, font-size 200ms;
 }
 
