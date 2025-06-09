@@ -45,19 +45,21 @@
 
 .download-btn {
   display: inline-block;
-  padding: 12px 24px;
-  background-color: #007bff;
-  color: white;
-  text-decoration: none;
-  border-radius: 6px;
+  background-color: #3c096cda;
+  border: none;
+  padding: 10px 50px;
+  color: #e0aaff;
+  border-radius: 5px;
+  cursor: pointer;
   transition: background-color 0.3s ease;
+  box-shadow: 3px 3px #10002b;
 }
 
 .download-btn:hover {
   background-color: #0056b3;
 }
 
-.contact{
+.contact {
   padding: 80px 10px 0px 10px;
   align-items: center;
 }
@@ -65,7 +67,6 @@
 .contact-container {
   width: 75%;
   margin: 0 auto; /* centers the container horizontally */
-  display: flex;
   flex-direction: column;
   align-items: center;
 }
