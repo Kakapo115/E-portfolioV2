@@ -12,35 +12,18 @@ class AboutSlideshow extends Component {
     this.slides = [
       {
         title: "About Me",
-        content: `I'm a passionate individual with a Bachelor of Applied Information
-          graduated at the end of 2023. My place I call home is in Tauranga in
-          the mighty Bay Of Plenty. My free time is spent either in the digital
-          realm or in nature camping, fishing, and the like. This gives me a
-          good look at how things work which is how I found digital technology,
-          which is the place id like to work and having finished my degree im
-          ready to get into it.`,
+        content: `I'm a passionate and curious individual who graduated with a Bachelor of Applied Information at the end of 2023. I’m based in Tauranga, nestled in the beautiful Bay of Plenty — a place that balances my love for both nature and technology. Whether I’m out fishing, camping, or exploring the outdoors, or diving into digital projects, I’ve always been drawn to understanding how things work. That curiosity naturally led me into the world of digital technology, where I found not just interest, but purpose. 
+        My approach to life blends analytical thinking with hands-on experience, and I enjoy solving problems both in the physical and digital worlds. Now, having completed my studies, I’m eager to put my skills to use in the tech industry. I’m motivated by the ever-evolving nature of technology and driven to grow within it. I see this as not just a career, but a field where I can continuously explore, learn, and make meaningful contributions.`,
       },
       {
         title: "Career",
-        content: `My journey mainly reflects physical labor experience, but ive always
-          wanted to work in the tech industry as I found a love for the logical
-          way things work. So I hope to bring the soft skills I gathered in my
-          years of physical labour work into the digital world. All this leading
-          me to be ready to jump into any work in the industry putting the
-          skills I learned in school and the personal learning ive done into
-          practice.`,
+        content: `My career journey has largely been grounded in physical labor roles, where I developed strong soft skills such as communication, resilience, teamwork, and a strong work ethic. Despite the hands-on nature of that work, I always held a deep interest in technology, fascinated by how systems function logically and efficiently. Over time, this interest turned into a goal — to pivot into the tech industry and build a career where I could apply both my technical and interpersonal strengths. 
+        Now that I’ve completed my formal education, I’m ready to take that leap. I bring with me not only the technical knowledge I’ve gained through my degree and personal learning, but also the discipline and problem-solving mindset honed through years of real-world work experience. I’m enthusiastic about contributing to a tech-focused environment, whether it's development, IT support, or problem-solving tasks. My ability to adapt, communicate effectively, and stay committed to continuous improvement means I’m well-prepared to step into any role and thrive.`,
       },
       {
         title: "Education",
-        content: `In my pursuit of knowledge, I graduated with a Bachelor of Applied
-          Information in mid November 2023. My bachelor gave me a wide range of
-          knowledge in the various areas such as .NET MAUI development, MERN Web
-          development, game development through Unity and Unreal using C# and a
-          little C++, and some other experiences. These skills combined with my
-          personal ventures in the development world like working with python,
-          wordpress software, and some other software it gives me wide selection of
-          adaptable skills. Which can help me to learn any required skills I
-          need to complete the task a hand.`,
+        content: `I earned my Bachelor of Applied Information in November 2023, a degree that gave me a solid foundation across a wide range of technologies and development frameworks. Throughout my studies, I engaged in hands-on learning in areas like .NET MAUI development for cross-platform apps, full-stack web development using the MERN stack, and immersive game development using Unity and Unreal Engine — working primarily with C# and some C++. These projects challenged me to think critically, collaborate with others, and see a product through from concept to completion.
+        In addition to the structured coursework, I’ve spent considerable time expanding my skills on my own. This includes exploring Python scripting, managing content through WordPress, and experimenting with different tools and platforms to broaden my technical toolkit. This combination of academic and self-directed learning has shaped me into an adaptable and self-motivated developer who isn’t afraid to take on new challenges. I’m confident in my ability to learn on the fly and apply my growing skill set to real-world tasks and professional projects.`,
       },
     ];
   }
