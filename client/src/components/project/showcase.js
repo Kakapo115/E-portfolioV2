@@ -136,7 +136,7 @@ class Showcase extends Component {
             <div className="project-slideContent">
               <div className="project-slideText">
                 <h2>{dev.name}</h2>
-                <p>{typeMap[dev.type] || "Other"}</p>
+                <p>{typeMap[dev.type] || dev.type}</p>
                 <p>{dev.description}</p>
                 <p>
                   <strong>Skills:</strong>{" "}
