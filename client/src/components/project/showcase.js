@@ -94,7 +94,7 @@ goToPreviousSlide = () => {
     const typeMap = {
       webDev: "Web Development",
       appDev: "App Development",
-      otherdev: "Other Development",
+      otherDev: "Other Development",
     };
 
     return (
