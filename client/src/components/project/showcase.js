@@ -30,23 +30,38 @@ class Showcase extends Component {
 
   goToNextSlide = () => {
     const { devs } = this.props;
+    const { activeFilter } = this.state;
+
+    const filteredDevs =
+      activeFilter === "all"
+        ? devs
+        : devs.filter((d) => d.type === activeFilter);
+
     this.setState({ fade: false }, () => {
       setTimeout(() => {
         this.setState((prevState) => ({
-          currentIndex: (prevState.currentIndex + 1) % devs.length,
+          currentIndex: (prevState.currentIndex + 1) % filteredDevs.length,
           fade: true,
         }));
-      }, 300); // match CSS fade-out duration
+      }, 300);
     });
   };
 
   goToPreviousSlide = () => {
     const { devs } = this.props;
+    const { activeFilter } = this.state;
+
+    const filteredDevs =
+      activeFilter === "all"
+        ? devs
+        : devs.filter((d) => d.type === activeFilter);
+
     this.setState({ fade: false }, () => {
       setTimeout(() => {
         this.setState((prevState) => ({
           currentIndex:
-            (prevState.currentIndex - 1 + devs.length) % devs.length,
+            (prevState.currentIndex - 1 + filteredDevs.length) %
+            filteredDevs.length,
           fade: true,
         }));
       }, 300);
@@ -64,11 +79,11 @@ class Showcase extends Component {
   render() {
     const { devs } = this.props;
     const { currentIndex, fade, activeFilter } = this.state;
-
     const filteredDevs =
       activeFilter === "all"
         ? devs
         : devs.filter((d) => d.type === activeFilter);
+    const dev = filteredDevs[currentIndex % filteredDevs.length];
 
     if (!filteredDevs || filteredDevs.length === 0) {
       return (
@@ -76,12 +91,10 @@ class Showcase extends Component {
       );
     }
 
-    const dev = filteredDevs[currentIndex % filteredDevs.length];
-
     const typeMap = {
-      webdev: "Web Development",
-      appdev: "App Development",
-      gamedev: "Game Development",
+      webDev: "Web Development",
+      appDev: "App Development",
+      gameDev: "Game Development",
     };
 
     return (
@@ -103,9 +116,9 @@ class Showcase extends Component {
             >
               {type === "all"
                 ? "All"
-                : type === "webdev"
+                : type === "webDev"
                 ? "Web"
-                : type === "appdev"
+                : type === "appDev"
                 ? "App"
                 : "Game"}
             </button>
@@ -123,7 +136,7 @@ class Showcase extends Component {
             <div className="project-slideContent">
               <div className="project-slideText">
                 <h2>{dev.name}</h2>
-                <p>{typeMap[dev.type] || dev.type}</p>
+                <p>{typeMap[dev.type] || "Other"}</p>
                 <p>{dev.description}</p>
                 <p>
                   <strong>Skills:</strong>{" "}
