@@ -82,9 +82,6 @@ class Showcase extends Component {
         onMouseEnter={this.handleMouseEnter}
         onMouseLeave={this.handleMouseLeave}
       >
-        <h1 style={{ color: "#E0AAFF", paddingBottom: "1rem" }}>
-          All Projects
-        </h1>
         <div className="project-slideshowRow">
           <div className={`project-slide ${fade ? "fadeIn" : "fadeOut"}`}>
             <div
