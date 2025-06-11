@@ -104,7 +104,7 @@ goToPreviousSlide = () => {
         onMouseLeave={this.handleMouseLeave}
       >
         <div className="project-filterBar">
-          {["all", "webdev", "appdev", "otherdev"].map((type) => (
+          {["all", "webDev", "appDev", "otherDev"].map((type) => (
             <button
               key={type}
               className={`filterButton ${
@@ -116,9 +116,9 @@ goToPreviousSlide = () => {
             >
               {type === "all"
                 ? "All"
-                : type === "webdev"
+                : type === "webDev"
                 ? "Web"
-                : type === "appdev"
+                : type === "appDev"
                 ? "App"
                 : "Other"}
             </button>
