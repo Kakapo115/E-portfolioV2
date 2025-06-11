@@ -9,13 +9,6 @@
   padding: 0;
 }
 
-.slideshowRow {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  position: relative;
-}
-
 .project-slide {
   position: relative;
   width: 90vw;
