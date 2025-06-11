@@ -34,12 +34,6 @@
   justify-content: center;
 }
 
-.project-slideshowWrapper {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-}
-
 .project-slideContent {
   display: flex;
   flex-direction: row;
