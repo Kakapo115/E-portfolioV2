@@ -77,19 +77,18 @@ class Showcase extends Component {
     };
 
     return (
-      <div
-        className="slideshowContainer"
-        onMouseEnter={this.handleMouseEnter}
-        onMouseLeave={this.handleMouseLeave}
-      >
-        <div className="slideshowRow">
-          {/* Left Arrow */}
-          <div className="navZone leftZone" onClick={this.goToPreviousSlide}>
+      <div className="slideshowRow">
+        <div className={`slide ${fade ? "fadeIn" : "fadeOut"}`}>
+          {/* Left Arrow inside */}
+          <div
+            className="navZone inside leftZone"
+            onClick={this.goToPreviousSlide}
+          >
             <span className="arrow">&#10094;</span>
           </div>
 
           {/* Slide Content */}
-          <div className={`slide ${fade ? "fadeIn" : "fadeOut"}`}>
+          <div className="slideContent">
             <div className="slideText">
               <h2>{dev.name}</h2>
               <p>{typeMap[dev.type] || dev.type}</p>
@@ -114,13 +113,17 @@ class Showcase extends Component {
                 </a>
               )}
             </div>
+
             <div className="slideImageContainer">
               <img src={dev.imageUrl} alt={dev.name} className="slideImage" />
             </div>
           </div>
 
-          {/* Right Arrow */}
-          <div className="navZone rightZone" onClick={this.goToNextSlide}>
+          {/* Right Arrow inside */}
+          <div
+            className="navZone inside rightZone"
+            onClick={this.goToNextSlide}
+          >
             <span className="arrow">&#10095;</span>
           </div>
         </div>

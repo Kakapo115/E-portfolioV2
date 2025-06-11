@@ -1,20 +1,46 @@
-/* Fade Transitions */
-.fadeIn {
-  animation: fadeInSlide 0.5s ease-in-out;
+.slideshowContainer {
+  text-align: center;
+  background: linear-gradient(to bottom right, #3c096c, #e0aaff);
+  color: white;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
 }
 
-.fadeOut {
-  animation: fadeOutSlide 0.3s ease-in-out;
+.slideshowRow {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+.slide {
+  position: relative;
+  width: 90vw;
+  padding: 4rem 5rem;
+  background: #10002b;
+  border-radius: 16px;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.4);
+  color: #ffffff;
+  transition: opacity 0.6s ease-in-out;
+  animation: fadeInSlide 0.5s ease-in-out;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .slideContent {
   display: flex;
   flex-direction: row;
+  gap: 3rem;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
-  gap: 1.5rem;
-  flex-wrap: wrap; /* Keeps it responsive on smaller screens */
-  margin: 3pc 14pc 3pc 14pc;
+  position: relative;
+  z-index: 1;
 }
 
 .slideText {
@@ -22,25 +48,77 @@
   text-align: left;
 }
 
-.slideshowContainer {
-  text-align: center;
-  padding: 2rem;
-  margin: auto;
-}
-
-.slideshowRow {
+.slideImageContainer {
+  flex: 1;
   display: flex;
-  flex-direction: row;
-  align-items: stretch;
   justify-content: center;
-  max-width: none;
 }
 
 .slideImage {
-  height: 400px; /* Set desired fixed height */
-  object-fit: cover; /* Crop to fit nicely */
+  height: 400px;
+  max-width: 100%;
+  object-fit: cover;
   border-radius: 10px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Arrows inside and overlapping */
+.navZone.inside {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 20%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 2;
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.2), transparent);
+}
+
+.navZone.inside.rightZone {
+  right: 0;
+  background: linear-gradient(to left, rgba(0, 0, 0, 0.2), transparent);
+}
+
+.navZone.inside.leftZone {
+  left: 0;
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.2), transparent);
+}
+
+.arrow {
+  font-size: 3rem;
+  color: rgba(255, 255, 255, 0.6);
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.navZone:hover .arrow {
+  color: #ffffff;
+  transform: scale(1.2);
+}
+
+.projLink {
+  display: inline-block;
+  margin-top: 10px;
+  background-color: #5a189a;
+  color: white;
+  padding: 10px 30px;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.projLink:hover {
+  background-color: #9d4edd;
+}
+
+.project {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 @keyframes fadeInSlide {
@@ -63,59 +141,4 @@
     opacity: 0;
     transform: translateX(-20px);
   }
-}
-
-/* Update nav zones to no longer be absolute */
-.navZone {
-  width: 10%; /* Or 15% depending on your design */
-  height: auto;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: none;
-  cursor: pointer;
-  transition: background 0.3s ease;
-}
-
-.navZone:hover {
-  background: rgba(0, 0, 0, 0.05); /* Slightly visible on hover */
-}
-
-/* On hover they fade in */
-.leftZone {
-  background: linear-gradient(to right, rgba(0, 0, 0, 0.1), transparent);
-}
-
-.rightZone {
-  background: linear-gradient(to left, rgba(0, 0, 0, 0.1), transparent);
-}
-
-.navZone:hover.leftZone {
-  background: linear-gradient(to right, rgba(0, 0, 0, 0.3), transparent);
-}
-
-.navZone:hover.rightZone {
-  background: linear-gradient(to left, rgba(0, 0, 0, 0.3), transparent);
-}
-
-/* Arrow styling */
-.arrow {
-  font-size: 3rem;
-  color: rgba(0, 0, 0, 0.3); /* Light when idle */
-  transition: color 0.3s ease, transform 0.3s ease;
-}
-
-.navZone:hover .arrow {
-  color: rgba(0, 0, 0, 0.8); /* Darker on hover */
-  transform: scale(1.2);
-}
-
-.project {
-  padding: 80px 10px 0px 10px;
-  width: 75%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0 auto;
-  flex-direction: column;
 }

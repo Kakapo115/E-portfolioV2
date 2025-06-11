@@ -31,7 +31,9 @@ class projects extends Component {
 
     return (
       <div className="project">
-        <h1>All Projects</h1>
+        <h1 style={{ color: "#E0AAFF", paddingBottom: "1rem" }}>
+          All Projects
+        </h1>
         <Showcase devs={devs} />
       </div>
     );
