@@ -7,6 +7,7 @@ class Showcase extends Component {
       currentIndex: 0,
       isHovered: false,
       fade: true,
+      activeFilter: "all",
     };
     this.slideInterval = null;
   }
@@ -62,13 +63,20 @@ class Showcase extends Component {
 
   render() {
     const { devs } = this.props;
-    const { currentIndex, fade } = this.state;
+    const { currentIndex, fade, activeFilter } = this.state;
 
-    if (!devs || devs.length === 0) {
-      return <div className="slideshowContainer">Loading projects...</div>;
+    const filteredDevs =
+      activeFilter === "all"
+        ? devs
+        : devs.filter((d) => d.type === activeFilter);
+
+    if (!filteredDevs || filteredDevs.length === 0) {
+      return (
+        <div className="project-slideshowContainer">No projects found.</div>
+      );
     }
 
-    const dev = devs[currentIndex];
+    const dev = filteredDevs[currentIndex % filteredDevs.length];
 
     const typeMap = {
       webdev: "Web Development",
@@ -82,6 +90,27 @@ class Showcase extends Component {
         onMouseEnter={this.handleMouseEnter}
         onMouseLeave={this.handleMouseLeave}
       >
+        <div className="project-filterBar">
+          {["all", "webdev", "appdev", "gamedev"].map((type) => (
+            <button
+              key={type}
+              className={`filterButton ${
+                activeFilter === type ? "active" : ""
+              }`}
+              onClick={() =>
+                this.setState({ activeFilter: type, currentIndex: 0 })
+              }
+            >
+              {type === "all"
+                ? "All"
+                : type === "webdev"
+                ? "Web"
+                : type === "appdev"
+                ? "App"
+                : "Game"}
+            </button>
+          ))}
+        </div>
         <div className="project-slideshowRow">
           <div className={`project-slide ${fade ? "fadeIn" : "fadeOut"}`}>
             <div

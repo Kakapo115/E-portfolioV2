@@ -18,7 +18,7 @@
 
 .project-slide {
   position: relative;
-  width: 90vw;
+  width: 90%;
   padding: 4rem 5rem;
   background: #10002b;
   border-radius: 16px;
@@ -35,12 +35,9 @@
 .project-slideContent {
   display: flex;
   flex-direction: row;
-  gap: 3rem;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-between;
-  position: relative;
-  z-index: 1;
+  gap: 2rem;
+  align-items: flex-start;
+  justify-content: center;
 }
 
 .project-slideText {
@@ -110,6 +107,31 @@
 
 .projLink:hover {
   background-color: #9d4edd;
+}
+
+.project-filterBar {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  padding: 2rem 0 1rem 0;
+}
+
+.filterButton {
+  background-color: transparent;
+  border: 2px solid #e0aaff;
+  color: #e0aaff;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.filterButton:hover,
+.filterButton.active {
+  background-color: #9d4edd;
+  border-color: #9d4edd;
+  color: white;
 }
 
 @keyframes fadeInSlide {
