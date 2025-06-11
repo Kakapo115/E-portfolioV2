@@ -2,7 +2,7 @@
 .header {
   position: fixed;
   top: 0;
-  background-color: blueviolet;
+  background-color: #10002B;
   width: 100%;
   z-index: 1000;
   padding: 10px;
