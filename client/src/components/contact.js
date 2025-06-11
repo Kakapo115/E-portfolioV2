@@ -101,7 +101,7 @@ class contact extends Component {
                 ></textarea>
               </div>
 
-              <div className="form-group">
+              <div className="form-group recaptcha">
                 <ReCAPTCHA
                   ref={this.recaptchaRef}
                   sitekey="6LchC1orAAAAACMkDD_7KWCUBUyq9iV8VRn6VDxn"
