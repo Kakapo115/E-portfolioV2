@@ -29,44 +29,44 @@ class Showcase extends Component {
   };
 
   goToNextSlide = () => {
-    const { devs } = this.props;
-    const { activeFilter } = this.state;
+  const { devs } = this.props;
+  const { activeFilter } = this.state;
 
-    const filteredDevs =
-      activeFilter === "all"
-        ? devs
-        : devs.filter((d) => d.type === activeFilter);
+  const filteredDevs =
+    activeFilter === "all"
+      ? devs
+      : devs.filter((d) => d.type === activeFilter);
 
-    this.setState({ fade: false }, () => {
-      setTimeout(() => {
-        this.setState((prevState) => ({
-          currentIndex: (prevState.currentIndex + 1) % filteredDevs.length,
-          fade: true,
-        }));
-      }, 300);
-    });
-  };
+  this.setState({ fade: false }, () => {
+    setTimeout(() => {
+      this.setState((prevState) => ({
+        currentIndex: (prevState.currentIndex + 1) % filteredDevs.length,
+        fade: true,
+      }));
+    }, 300);
+  });
+};
 
-  goToPreviousSlide = () => {
-    const { devs } = this.props;
-    const { activeFilter } = this.state;
+goToPreviousSlide = () => {
+  const { devs } = this.props;
+  const { activeFilter } = this.state;
 
-    const filteredDevs =
-      activeFilter === "all"
-        ? devs
-        : devs.filter((d) => d.type === activeFilter);
+  const filteredDevs =
+    activeFilter === "all"
+      ? devs
+      : devs.filter((d) => d.type === activeFilter);
 
-    this.setState({ fade: false }, () => {
-      setTimeout(() => {
-        this.setState((prevState) => ({
-          currentIndex:
-            (prevState.currentIndex - 1 + filteredDevs.length) %
-            filteredDevs.length,
-          fade: true,
-        }));
-      }, 300);
-    });
-  };
+  this.setState({ fade: false }, () => {
+    setTimeout(() => {
+      this.setState((prevState) => ({
+        currentIndex:
+          (prevState.currentIndex - 1 + filteredDevs.length) %
+          filteredDevs.length,
+        fade: true,
+      }));
+    }, 300);
+  });
+};
 
   handleMouseEnter = () => {
     this.setState({ isHovered: true });
@@ -90,7 +90,7 @@ class Showcase extends Component {
         <div className="project-slideshowContainer">No projects found.</div>
       );
     }
-
+    
     const typeMap = {
       webDev: "Web Development",
       appDev: "App Development",
@@ -116,9 +116,9 @@ class Showcase extends Component {
             >
               {type === "all"
                 ? "All"
-                : type === "webDev"
+                : type === "webdev"
                 ? "Web"
-                : type === "appDev"
+                : type === "appdev"
                 ? "App"
                 : "Game"}
             </button>
