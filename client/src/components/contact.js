@@ -71,7 +71,8 @@ class contact extends Component {
       <div className="contact">
         <div className="contact-container">
           <div className="contactform">
-            <h1>Contact Me</h1>
+            <h1>Let's Get In Touch</h1>
+            <p>Fill in the form below or download my CV.</p>
             <form onSubmit={this.handleFormSubmit}>
               <div className="form-group">
                 <input
@@ -118,7 +119,8 @@ class contact extends Component {
           </div>
 
           <div className="cv-container">
-            <h1>My Curriculum Vitae</h1>
+            <h1>Download My CV</h1>
+            <p>Get a copy of my latest CV in PDF format:</p>
             <a
               href="assets/RickySyme-CV-SoftwareDev.docx.pdf"
               download

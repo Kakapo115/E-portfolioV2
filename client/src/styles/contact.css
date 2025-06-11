@@ -1,4 +1,87 @@
-.form-group {
+.contact {
+  padding: 120px 10px;
+  background-color: #3c096c; /* Persian Indigo */
+  color: white;
+  background: linear-gradient(to bottom right, #10002B, #5A189A);
+}
+
+.contact-container {
+  width: 75%;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3rem;
+  justify-content: space-between;
+}
+
+.contactform, .cv-container {
+  flex: 1;
+  min-width: 300px;
+  background-color: #10002B; /* Russian Violet */
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.contactform h1,
+.cv-container h1 {
+  font-size: 1.8rem;
+  color: #E0AAFF;
+  margin-bottom: 1rem;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.95);
+  color: black;
+  border-radius: 8px;
+  padding: 12px;
+  box-shadow: none;
+  border: none;
+  margin-bottom: 1rem;
+}
+
+.form-group button {
+  background-color: #5A189A; /* Tekhelet */
+  color: white;
+  padding: 12px 40px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.form-group button:hover {
+  background-color: #7B2CBF; /* French Violet */
+}
+
+.download-btn {
+  background-color: #5A189A;
+  color: white;
+  padding: 12px 40px;
+  font-size: 1rem;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+  display: inline-block;
+  margin-top: 1rem;
+  text-align: center;
+  text-decoration: none;
+}
+
+.download-btn:hover {
+  background-color: #9D4EDD; /* Amethyst */
+}
+
+.sending-message,
+.sent-message {
+  font-style: italic;
+  color: #E0AAFF;
+}
+
+
+/* .form-group {
   margin-bottom: 15px;
 }
 .form-group input,
@@ -66,11 +149,11 @@
 
 .contact-container {
   width: 75%;
-  margin: 0 auto; /* centers the container horizontally */
+  margin: 0 auto; 
   flex-direction: column;
   align-items: center;
 }
 
 .cv-container{
   padding-top: 40px;
-}
+} */
