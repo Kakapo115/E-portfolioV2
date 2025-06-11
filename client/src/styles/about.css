@@ -1,6 +1,6 @@
 .aboutSlideshowContainer {
   text-align: center;
-  padding: 80px 20px 60px 20px;
+  padding: 140px 20px 140px 20px;
   background: linear-gradient(to bottom right, #3C096C, #5A189A);
   color: white;
 }
@@ -20,7 +20,7 @@
   background: #10002B;
   border-radius: 16px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-  color: #E0AAFF;
+  color: #FFFFFF;
   transition: opacity 0.6s ease-in-out;
   animation: fadeIn 0.8s ease-in;
   max-width: 800px;
@@ -29,7 +29,7 @@
 .slide h1 {
   font-size: 2rem;
   margin-bottom: 1rem;
-  color: #FFFFFF;
+  color: #E0AAFF;
 }
 
 .slide p {
