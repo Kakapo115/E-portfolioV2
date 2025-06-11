@@ -94,7 +94,7 @@ goToPreviousSlide = () => {
     const typeMap = {
       webDev: "Web Development",
       appDev: "App Development",
-      gameDev: "Game Development",
+      otherdev: "Other Development",
     };
 
     return (
@@ -104,7 +104,7 @@ goToPreviousSlide = () => {
         onMouseLeave={this.handleMouseLeave}
       >
         <div className="project-filterBar">
-          {["all", "webdev", "appdev", "gamedev"].map((type) => (
+          {["all", "webdev", "appdev", "otherdev"].map((type) => (
             <button
               key={type}
               className={`filterButton ${
@@ -120,7 +120,7 @@ goToPreviousSlide = () => {
                 ? "Web"
                 : type === "appdev"
                 ? "App"
-                : "Game"}
+                : "Other"}
             </button>
           ))}
         </div>
