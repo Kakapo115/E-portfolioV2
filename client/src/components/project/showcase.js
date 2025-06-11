@@ -148,6 +148,16 @@ class Showcase extends Component {
                       </span>
                     ))}
                   </p>
+                  {dev.url && (
+                    <a
+                      href={dev.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="projLink"
+                    >
+                      Visit Project
+                    </a>
+                  )}
                 </div>
 
                 <div className="project-slideImageContainer">
@@ -157,16 +167,6 @@ class Showcase extends Component {
                     className="project-slideImage"
                   />
                 </div>
-                {dev.url && (
-                  <a
-                    href={dev.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="projLink"
-                  >
-                    Visit Project
-                  </a>
-                )}
               </div>
 
               <div

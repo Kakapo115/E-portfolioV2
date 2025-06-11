@@ -39,12 +39,6 @@
   display: flex;
   justify-content: center;
 }
-.project-linkWrapper {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  margin-top: 1rem;
-}
 
 .project-slideContent {
   display: flex;
@@ -109,13 +103,14 @@
 }
 
 .projLink {
+  display: inline-block;
+  margin-top: 10px;
   background-color: #5a189a;
   color: white;
   padding: 10px 30px;
   border-radius: 8px;
   text-decoration: none;
   transition: background-color 0.3s ease;
-  font-weight: bold;
 }
 
 .projLink:hover {
