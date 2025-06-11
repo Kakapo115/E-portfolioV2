@@ -20,7 +20,7 @@
 .slide {
   position: relative;
   width: 90vw;
-  padding: 4rem 5rem;
+  padding: 8rem 10rem;
   background: #10002B;
   border-radius: 16px;
   box-shadow: 0 4px 24px rgba(0, 0, 0, 0.4);
@@ -74,7 +74,7 @@
 
 .arrow {
   font-size: 3rem;
-  color: rgba(255, 255, 255, 0.6);
+  color: rgba(255, 255, 255, 0.1);
   transition: color 0.3s ease, transform 0.3s ease;
 }
 
