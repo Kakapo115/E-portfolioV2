@@ -98,13 +98,16 @@
 
 .projLink {
   display: inline-block;
-  margin-top: 10px;
+  margin-top: 10rem;
   background-color: #5a189a;
   color: white;
   padding: 10px 30px;
   border-radius: 8px;
   text-decoration: none;
   transition: background-color 0.3s ease;
+  margin-left: auto;
+  display: block;
+  width: fit-content;
 }
 
 .projLink:hover {
