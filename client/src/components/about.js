@@ -72,12 +72,7 @@ class AboutSlideshow extends Component {
       >
         <div className="slideshowRow">
           {/* Left Arrow */}
-          <div
-            className="navZone leftZone"
-            onClick={this.goToPreviousSlide}
-            onMouseEnter={this.handleMouseEnter}
-            onMouseLeave={this.handleMouseLeave}
-          >
+          <div className="navZone leftZone" onClick={this.goToPreviousSlide}>
             <span className="arrow">&#10094;</span>
           </div>
 
@@ -88,12 +83,7 @@ class AboutSlideshow extends Component {
           </div>
 
           {/* Right Arrow */}
-          <div
-            className="navZone rightZone"
-            onClick={this.goToNextSlide}
-            onMouseEnter={this.handleMouseEnter}
-            onMouseLeave={this.handleMouseLeave}
-          >
+          <div className="navZone rightZone" onClick={this.goToNextSlide}>
             <span className="arrow">&#10095;</span>
           </div>
         </div>

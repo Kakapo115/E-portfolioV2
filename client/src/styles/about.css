@@ -1,40 +1,62 @@
-/* .aboutContainer {
-    width: 60%;
-    padding-left: 20%;
-    padding-right: 20%;
-    align-content: center;
-    font-size: 36px;
-  } */
+.aboutSlideshowContainer {
+  text-align: center;
+  padding: 80px 20px 60px 20px;
+  background: linear-gradient(to bottom right, #3C096C, #5A189A);
+  color: white;
+}
 
-/* New flex wrapper to align left-arrow, content, right-arrow */
 .slideshowRow {
   display: flex;
   flex-direction: row;
-  align-items: stretch; /* Makes all children match height */
+  align-items: stretch;
   justify-content: center;
-  max-width: none;
-  margin: auto;
+  max-width: 100%;
+  gap: 2rem;
 }
 
-/* Adjust the slide box */
 .slide {
   flex: 1;
   padding: 2rem;
-  background: white;
-  box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
-}
-
-.aboutSlideshowContainer {
-  text-align: center;
-  padding: 2rem;
-  margin: auto;
-  padding: 80px 10px 0px 10px;
-  width: 75%;
-}
-
-.slide {
+  background: #10002B;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  color: #E0AAFF;
   transition: opacity 0.6s ease-in-out;
   animation: fadeIn 0.8s ease-in;
+  max-width: 800px;
+}
+
+.slide h1 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #FFFFFF;
+}
+
+.slide p {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  text-align: left;
+  white-space: pre-line; /* Preserves your formatting */
+}
+
+.navZone {
+  width: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.arrow {
+  font-size: 3rem;
+  color: rgba(255, 255, 255, 0.6);
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.navZone:hover .arrow {
+  color: #FFFFFF;
+  transform: scale(1.2);
 }
 
 @keyframes fadeIn {
@@ -46,4 +68,4 @@
     opacity: 1;
     transform: translateY(0);
   }
-}
+} 
