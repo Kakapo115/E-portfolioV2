@@ -78,11 +78,11 @@ class Showcase extends Component {
 
     return (
       <div
-        className="slideshowContainer"
+        className="project-slideshowContainer"
         onMouseEnter={this.handleMouseEnter}
         onMouseLeave={this.handleMouseLeave}
       >
-        <div className="slideshowRow">
+        <div className="project-slideshowRow">
           <div className={`project-slide ${fade ? "fadeIn" : "fadeOut"}`}>
             <div
               className="project-navZone inside leftZone"
