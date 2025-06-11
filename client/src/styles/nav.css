@@ -22,7 +22,6 @@
 .siteTitle {
   font-size: 1.8rem;
   margin: 0;
-  color: black;
 }
 
 /* ======== Hamburger button ======== */
@@ -81,16 +80,16 @@
   margin: 5px;
   border: 0;
   background-color: transparent;
-  color: black;
+  color: #FFFFFF;
   transition: color 200ms, font-size 200ms;
 }
 
 .nav:hover {
-  color: purple;
+  color: #E0AAFF;
 }
 
 .nav:active {
-  color: rgb(245, 0, 245);
+  color: #9d4edd;
 }
 
 /* ======== Responsive: Desktop View ======== */
