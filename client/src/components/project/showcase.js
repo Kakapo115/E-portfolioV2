@@ -93,6 +93,9 @@ class Showcase extends Component {
 
             <div className="project-slideContent">
               <div className="project-slideText">
+                <h1 style={{ color: "#E0AAFF", paddingBottom: "1rem" }}>
+                  All Projects
+                </h1>
                 <h2>{dev.name}</h2>
                 <p>{typeMap[dev.type] || dev.type}</p>
                 <p>{dev.description}</p>
