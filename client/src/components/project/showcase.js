@@ -77,55 +77,61 @@ class Showcase extends Component {
     };
 
     return (
-      <div className="slideshowRow">
-        <div className={`project-slide ${fade ? "fadeIn" : "fadeOut"}`}>
-          <div
-            className="project-navZone inside leftZone"
-            onClick={this.goToPreviousSlide}
-          >
-            <span className="project-arrow">&#10094;</span>
-          </div>
-
-          <div className="project-slideContent">
-            <div className="project-slideText">
-              <h2>{dev.name}</h2>
-              <p>{typeMap[dev.type] || dev.type}</p>
-              <p>{dev.description}</p>
-              <p>
-                <strong>Skills:</strong>{" "}
-                {dev.skills.split(", ").map((skill, i) => (
-                  <span key={i} className="skill">
-                    {skill}
-                    {i < dev.skills.split(", ").length - 1 && ", "}
-                  </span>
-                ))}
-              </p>
-              {dev.url && (
-                <a
-                  href={dev.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="projLink"
-                >
-                  Visit Project
-                </a>
-              )}
+      <div
+        className="slideshowContainer"
+        onMouseEnter={this.handleMouseEnter}
+        onMouseLeave={this.handleMouseLeave}
+      >
+        <div className="slideshowRow">
+          <div className={`project-slide ${fade ? "fadeIn" : "fadeOut"}`}>
+            <div
+              className="project-navZone inside leftZone"
+              onClick={this.goToPreviousSlide}
+            >
+              <span className="project-arrow">&#10094;</span>
             </div>
 
-            <div className="project-slideImageContainer">
-              <img
-                src={dev.imageUrl}
-                alt={dev.name}
-                className="project-slideImage"
-              />
-            </div>
-          </div>
+            <div className="project-slideContent">
+              <div className="project-slideText">
+                <h2>{dev.name}</h2>
+                <p>{typeMap[dev.type] || dev.type}</p>
+                <p>{dev.description}</p>
+                <p>
+                  <strong>Skills:</strong>{" "}
+                  {dev.skills.split(", ").map((skill, i) => (
+                    <span key={i} className="skill">
+                      {skill}
+                      {i < dev.skills.split(", ").length - 1 && ", "}
+                    </span>
+                  ))}
+                </p>
+                {dev.url && (
+                  <a
+                    href={dev.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="projLink"
+                  >
+                    Visit Project
+                  </a>
+                )}
+              </div>
 
-          <div
-            className="project-navZone inside rightZone"
-            onClick={this.goToNextSlide}
-          >
-            <span className="project-arrow">&#10095;</span>
+              <div className="project-slideImageContainer">
+                <img
+                  src={dev.imageUrl}
+                  alt={dev.name}
+                  className="project-slideImage"
+                />
+              </div>
+            </div>
+
+            <div
+              className="project-navZone inside rightZone"
+              onClick={this.goToNextSlide}
+            >
+              <span className="project-arrow">&#10095;</span>
+            </div>
           </div>
         </div>
       </div>
