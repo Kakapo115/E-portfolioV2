@@ -16,7 +16,7 @@
   position: relative;
 }
 
-.slide {
+.project-slide {
   position: relative;
   width: 90vw;
   padding: 4rem 5rem;
@@ -32,7 +32,7 @@
   justify-content: center;
 }
 
-.slideContent {
+.project-slideContent {
   display: flex;
   flex-direction: row;
   gap: 3rem;
@@ -43,18 +43,18 @@
   z-index: 1;
 }
 
-.slideText {
+.project-slideText {
   flex: 1;
   text-align: left;
 }
 
-.slideImageContainer {
+.project-slideImageContainer {
   flex: 1;
   display: flex;
   justify-content: center;
 }
 
-.slideImage {
+.project-slideImage {
   height: 400px;
   max-width: 100%;
   object-fit: cover;
@@ -62,8 +62,7 @@
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
-/* Arrows inside and overlapping */
-.navZone.inside {
+.project-navZone.inside {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
@@ -77,23 +76,23 @@
   background: linear-gradient(to right, rgba(0, 0, 0, 0.2), transparent);
 }
 
-.navZone.inside.rightZone {
+.project-navZone.inside.rightZone {
   right: 0;
   background: linear-gradient(to left, rgba(0, 0, 0, 0.2), transparent);
 }
 
-.navZone.inside.leftZone {
+.project-navZone.inside.leftZone {
   left: 0;
   background: linear-gradient(to right, rgba(0, 0, 0, 0.2), transparent);
 }
 
-.arrow {
+.project-arrow {
   font-size: 3rem;
   color: rgba(255, 255, 255, 0.6);
   transition: color 0.3s ease, transform 0.3s ease;
 }
 
-.navZone:hover .arrow {
+.project-navZone:hover .project-arrow {
   color: #ffffff;
   transform: scale(1.2);
 }
@@ -111,14 +110,6 @@
 
 .projLink:hover {
   background-color: #9d4edd;
-}
-
-.project {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
 }
 
 @keyframes fadeInSlide {
@@ -141,4 +132,12 @@
     opacity: 0;
     transform: translateX(-20px);
   }
+}
+
+.project {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }

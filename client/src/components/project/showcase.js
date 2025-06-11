@@ -78,18 +78,16 @@ class Showcase extends Component {
 
     return (
       <div className="slideshowRow">
-        <div className={`slide ${fade ? "fadeIn" : "fadeOut"}`}>
-          {/* Left Arrow inside */}
+        <div className={`project-slide ${fade ? "fadeIn" : "fadeOut"}`}>
           <div
-            className="navZone inside leftZone"
+            className="project-navZone inside leftZone"
             onClick={this.goToPreviousSlide}
           >
-            <span className="arrow">&#10094;</span>
+            <span className="project-arrow">&#10094;</span>
           </div>
 
-          {/* Slide Content */}
-          <div className="slideContent">
-            <div className="slideText">
+          <div className="project-slideContent">
+            <div className="project-slideText">
               <h2>{dev.name}</h2>
               <p>{typeMap[dev.type] || dev.type}</p>
               <p>{dev.description}</p>
@@ -114,17 +112,20 @@ class Showcase extends Component {
               )}
             </div>
 
-            <div className="slideImageContainer">
-              <img src={dev.imageUrl} alt={dev.name} className="slideImage" />
+            <div className="project-slideImageContainer">
+              <img
+                src={dev.imageUrl}
+                alt={dev.name}
+                className="project-slideImage"
+              />
             </div>
           </div>
 
-          {/* Right Arrow inside */}
           <div
-            className="navZone inside rightZone"
+            className="project-navZone inside rightZone"
             onClick={this.goToNextSlide}
           >
-            <span className="arrow">&#10095;</span>
+            <span className="project-arrow">&#10095;</span>
           </div>
         </div>
       </div>
