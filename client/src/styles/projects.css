@@ -168,3 +168,28 @@
   align-items: center;
   justify-content: center;
 }
+
+.dotNav {
+  display: flex;
+  justify-content: center;
+  margin-top: 1.5rem;
+  gap: 10px;
+}
+
+.dot {
+  height: 12px;
+  width: 12px;
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 50%;
+  display: inline-block;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.dot:hover {
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+.dot.active {
+  background-color: #e0aaff;
+}
