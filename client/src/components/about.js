@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import "../styles/SiteAnimations.css";
 
 class AboutSlideshow extends Component {
   constructor(props) {
@@ -6,6 +7,7 @@ class AboutSlideshow extends Component {
     this.state = {
       currentIndex: 0,
       isHovered: false,
+      fade: true,
     };
     this.slideInterval = null;
 
@@ -45,16 +47,27 @@ class AboutSlideshow extends Component {
   };
 
   goToNextSlide = () => {
-    this.setState((prevState) => ({
-      currentIndex: (prevState.currentIndex + 1) % this.slides.length,
-    }));
+    this.setState({ fade: false }, () => {
+      setTimeout(() => {
+        this.setState((prevState) => ({
+          currentIndex: (prevState.currentIndex + 1) % this.slides.length,
+          fade: true,
+        }));
+      }, 300);
+    });
   };
 
   goToPreviousSlide = () => {
-    this.setState((prevState) => ({
-      currentIndex:
-        (prevState.currentIndex - 1 + this.slides.length) % this.slides.length,
-    }));
+    this.setState({ fade: false }, () => {
+      setTimeout(() => {
+        this.setState((prevState) => ({
+          currentIndex:
+            (prevState.currentIndex - 1 + this.slides.length) %
+            this.slides.length,
+          fade: true,
+        }));
+      }, 300);
+    });
   };
 
   handleMouseEnter = () => this.setState({ isHovered: true });
@@ -71,7 +84,7 @@ class AboutSlideshow extends Component {
         onMouseLeave={this.handleMouseLeave}
       >
         <div className="slideshowRow">
-          <div className="slide fadeIn">
+          <div className={`slide ${this.state.fade ? "fadeIn" : "fadeOut"}`}>
             {/* Left Arrow (overlapping left side) */}
             <div
               className="navZone inside leftZone"

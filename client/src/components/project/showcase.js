@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import "../styles/SiteAnimations.css";
 
 class Showcase extends Component {
   constructor(props) {
