@@ -15,11 +15,12 @@
   display: flex;
   justify-content: center;
   position: relative;
+  flex-direction: column;
 }
 
 .slide {
   position: relative;
-  width: 90vw;
+  width: 90%;
   padding: 8rem 10rem;
   background: #10002B;
   border-radius: 16px;

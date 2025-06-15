@@ -175,17 +175,17 @@ class Showcase extends Component {
               <span className="project-arrow">&#10095;</span>
             </div>
           </div>
-          <div className="dotNav">
-            {filteredDevs.map((_, index) => (
-              <span
-                key={index}
-                className={`dot ${currentIndex === index ? "active" : ""}`}
-                onClick={() =>
-                  this.setState({ currentIndex: index, isHovered: true })
-                }
-              ></span>
-            ))}
-          </div>
+        </div>
+        <div className="dotNav">
+          {filteredDevs.map((_, index) => (
+            <span
+              key={index}
+              className={`dot ${currentIndex === index ? "active" : ""}`}
+              onClick={() =>
+                this.setState({ currentIndex: index, isHovered: true })
+              }
+            ></span>
+          ))}
         </div>
       </div>
     );
