@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import "../styles/SiteAnimations.css";
 
 class AboutSlideshow extends Component {
   constructor(props) {
