@@ -97,17 +97,6 @@ class AboutSlideshow extends Component {
               <h1>{title}</h1>
               <p>{content}</p>
             </div>
-            <div className="dotNav">
-              {this.slides.map((_, index) => (
-                <span
-                  key={index}
-                  className={`dot ${
-                    this.state.currentIndex === index ? "active" : ""
-                  }`}
-                  onClick={() => this.setState({ currentIndex: index })}
-                ></span>
-              ))}
-            </div>
 
             {/* Right Arrow (overlapping right side) */}
             <div
@@ -116,6 +105,19 @@ class AboutSlideshow extends Component {
             >
               <span className="arrow">&#10095;</span>
             </div>
+          </div>
+          <div className="dotNav">
+            {this.slides.map((_, index) => (
+              <span
+                key={index}
+                className={`dot ${
+                  this.state.currentIndex === index ? "active" : ""
+                }`}
+                onClick={() =>
+                  this.setState({ currentIndex: index, isHovered: true })
+                }
+              ></span>
+            ))}
           </div>
         </div>
       </div>
