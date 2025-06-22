@@ -6,8 +6,7 @@
   gap: 3rem;
   justify-content: space-between;
   padding-top: 4rem;
-  padding-bottom: 4rem;
-  min-height: 90vh;
+  padding-bottom: 8rem;
 }
 
 .contactform, .cv-container {
