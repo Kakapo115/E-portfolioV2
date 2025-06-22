@@ -1,7 +1,5 @@
 .aboutSlideshowContainer {
   text-align: center;
-  background: linear-gradient(to bottom right, #3c096c, #e0aaff);
-  color: white;
   min-height: 90vh;
   display: flex;
   align-items: center;

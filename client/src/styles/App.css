@@ -13,7 +13,10 @@ html, body, #root {
 }
 
 .pageContent {
-  padding-top: 160px; /* Adjust if your header is taller */
+  padding-top: 160px;
+  padding-bottom: 40px;
+  background: linear-gradient(to bottom right, #3c096c, #e0aaff);
+  color: white;
 }
 
 .App {
