@@ -87,3 +87,8 @@
 .recaptcha{
   padding-bottom: 10px;
 }
+
+/* ======== Responsive: Mobile View ======== */
+@media (max-width: 768px) {
+
+}
