@@ -63,9 +63,8 @@
 
 .project-navZone.inside {
   position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 5%;
+  top: 0;
+  width: 20%;
   height: 100%;
   display: flex;
   align-items: center;
@@ -201,7 +200,8 @@
     align-items: center;
   }
 
-  .project-slideText, .project-slideImageContainer {
+  .project-slideText,
+  .project-slideImageContainer {
     width: 100%;
     text-align: center;
   }
@@ -209,5 +209,31 @@
   .projLink {
     margin-left: auto;
     margin-right: auto;
+  }
+
+  .project-slide {
+    padding: 2.5rem 1.5rem;
+  }
+
+  .project-slideText {
+    padding: 1rem 0;
+  }
+
+  .project-slideText p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+  }
+
+  .project-slide h1 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #e0aaff;
+  }
+
+  .project-slideImage {
+    height: auto;
+    width: 90%;
+    max-width: 300px;
+    object-fit: contain;
   }
 }
