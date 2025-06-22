@@ -19,7 +19,7 @@ class Header extends Component {
     const { isMenuOpen } = this.state;
 
     return (
-      <div className={this.props.className || "header"}>
+      <header className={`header ${this.props.className || ""}`}>
         <div className="menuRow">
           <h1 className="siteTitle">Ricky Syme's E-Portfolio</h1>
           <button className="hamburger" onClick={this.toggleMenu}>
@@ -48,7 +48,7 @@ class Header extends Component {
             </div>
           </div>
         </div>
-      </div>
+      </header>
     );
   }
 }

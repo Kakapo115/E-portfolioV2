@@ -43,7 +43,7 @@ function App() {
 
   return (
     <div className="App">
-      <Header setSelectedComponent={setSelectedComponent} className={`header ${isHeaderHidden ? "hidden" : ""}`}/>
+      <Header setSelectedComponent={setSelectedComponent} className={isHeaderHidden ? "hidden" : ""} />
       <div>{renderComponent()}</div>
       <Footer />
     </div>
