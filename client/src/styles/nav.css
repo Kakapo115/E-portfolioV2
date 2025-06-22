@@ -2,7 +2,7 @@
 .header {
   position: fixed;
   top: 0;
-  color: #FFFFFF;
+  color: #ffffff;
   background-color: #3c096c;
   width: 100%;
   z-index: 1000;
@@ -80,12 +80,12 @@
   margin: 5px;
   border: 0;
   background-color: transparent;
-  color: #FFFFFF;
+  color: #ffffff;
   transition: color 200ms, font-size 200ms;
 }
 
 .nav:hover {
-  color: #E0AAFF;
+  color: #e0aaff;
 }
 
 .nav:active {
@@ -117,6 +117,12 @@
   .hamburger {
     display: none;
   }
+}
+
+/* Hide header when scrolling down */
+.header.hidden {
+  transform: translateY(-100%);
+  transition: transform 0.3s ease-in-out;
 }
 
 /* ======== Responsive: Mobile View ======== */

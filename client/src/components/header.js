@@ -19,7 +19,7 @@ class Header extends Component {
     const { isMenuOpen } = this.state;
 
     return (
-      <div className="header">
+      <div className={this.props.className || "header"}>
         <div className="menuRow">
           <h1 className="siteTitle">Ricky Syme's E-Portfolio</h1>
           <button className="hamburger" onClick={this.toggleMenu}>
