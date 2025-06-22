@@ -40,15 +40,16 @@
   gap: 2rem;
   align-items: flex-start;
   justify-content: center;
+  padding: 1rem 1.5rem;
 }
 
 .project-slideText {
-  flex: 1;
+  flex: 1.2;
   text-align: left;
 }
 
 .project-slideImageContainer {
-  flex: 1;
+  flex: 1.2;
   display: flex;
   justify-content: center;
 }
@@ -172,7 +173,7 @@
 .dotNav {
   display: flex;
   justify-content: center;
-  margin-top: 1.5rem;
+  margin: 1.5rem 0 3rem;
   gap: 10px;
 }
 

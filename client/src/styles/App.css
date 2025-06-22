@@ -12,6 +12,10 @@ html, body, #root {
   overflow-x: hidden;
 }
 
+.pageContent {
+  padding-top: 80px; /* Adjust if your header is taller */
+}
+
 .App {
   min-height: 100vh; /* Ensure it covers the full viewport height */
   width: 100%;

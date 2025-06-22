@@ -77,47 +77,49 @@ class AboutSlideshow extends Component {
     const { title, content } = this.slides[currentIndex];
 
     return (
-      <div
-        className="aboutSlideshowContainer"
-        onMouseEnter={this.handleMouseEnter}
-        onMouseLeave={this.handleMouseLeave}
-      >
-        <div className="slideshowRow">
-          <div className={`slide ${this.state.fade ? "fadeIn" : "fadeOut"}`}>
-            {/* Left Arrow (overlapping left side) */}
-            <div
-              className="navZone inside leftZone"
-              onClick={this.goToPreviousSlide}
-            >
-              <span className="arrow">&#10094;</span>
-            </div>
+      <div className="pageContent">
+        <div
+          className="aboutSlideshowContainer"
+          onMouseEnter={this.handleMouseEnter}
+          onMouseLeave={this.handleMouseLeave}
+        >
+          <div className="slideshowRow">
+            <div className={`slide ${this.state.fade ? "fadeIn" : "fadeOut"}`}>
+              {/* Left Arrow (overlapping left side) */}
+              <div
+                className="navZone inside leftZone"
+                onClick={this.goToPreviousSlide}
+              >
+                <span className="arrow">&#10094;</span>
+              </div>
 
-            {/* Slide Content */}
-            <div className="slideContent">
-              <h1>{title}</h1>
-              <p>{content}</p>
-            </div>
+              {/* Slide Content */}
+              <div className="slideContent">
+                <h1>{title}</h1>
+                <p>{content}</p>
+              </div>
 
-            {/* Right Arrow (overlapping right side) */}
-            <div
-              className="navZone inside rightZone"
-              onClick={this.goToNextSlide}
-            >
-              <span className="arrow">&#10095;</span>
+              {/* Right Arrow (overlapping right side) */}
+              <div
+                className="navZone inside rightZone"
+                onClick={this.goToNextSlide}
+              >
+                <span className="arrow">&#10095;</span>
+              </div>
             </div>
-          </div>
-          <div className="dotNav">
-            {this.slides.map((_, index) => (
-              <span
-                key={index}
-                className={`dot ${
-                  this.state.currentIndex === index ? "active" : ""
-                }`}
-                onClick={() =>
-                  this.setState({ currentIndex: index, isHovered: true })
-                }
-              ></span>
-            ))}
+            <div className="dotNav">
+              {this.slides.map((_, index) => (
+                <span
+                  key={index}
+                  className={`dot ${
+                    this.state.currentIndex === index ? "active" : ""
+                  }`}
+                  onClick={() =>
+                    this.setState({ currentIndex: index, isHovered: true })
+                  }
+                ></span>
+              ))}
+            </div>
           </div>
         </div>
       </div>

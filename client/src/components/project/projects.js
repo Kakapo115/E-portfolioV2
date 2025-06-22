@@ -30,8 +30,10 @@ class projects extends Component {
     const { devs } = this.state;
 
     return (
-      <div className="project">
-        <Showcase devs={devs} />
+      <div className="pageContent">
+        <div className="project">
+          <Showcase devs={devs} />
+        </div>
       </div>
     );
   }

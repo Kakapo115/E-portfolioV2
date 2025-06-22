@@ -101,4 +101,9 @@
     padding: 1.5rem;
     box-sizing: border-box;
   }
+
+  .g-recaptcha {
+    transform: scale(0.85);
+    transform-origin: left;
+  }
 }
