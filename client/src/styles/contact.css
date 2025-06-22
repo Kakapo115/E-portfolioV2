@@ -81,10 +81,7 @@
 }
 
 .recaptcha {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding-bottom: 10px;
+  padding-bottom: 26px;
 }
 
 /* ======== Responsive: Mobile View ======== */
