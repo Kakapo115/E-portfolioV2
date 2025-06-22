@@ -64,6 +64,6 @@ footer{
 /* ======== Responsive: Mobile View ======== */
 @media (max-width: 768px) {
   .pageContent {
-    padding-top: 100px;
+    padding-top: 113px;
   }
 }
