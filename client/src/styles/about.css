@@ -97,4 +97,17 @@
 
 /* ======== Responsive: Mobile View ======== */
 @media (max-width: 768px) {
+  .aboutSlideshowContainer {
+    padding: 20px 10px;
+  }
+
+  .slide {
+    width: 100%;
+    padding: 2rem 1.5rem;
+    box-sizing: border-box;
+  }
+
+  .slide h1, .slide p {
+    text-align: center;
+  }
 }

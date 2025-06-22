@@ -121,8 +121,15 @@
 
 /* ======== Responsive: Mobile View ======== */
 @media (max-width: 768px) {
+  .menuRow {
+    flex-direction: column;
+    align-items: center;
+  }
+
   .hamburger {
     display: block;
+    margin-top: 10px;
+    font-size: 2rem;
   }
 
   .mainNav {
