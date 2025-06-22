@@ -13,7 +13,7 @@ html, body, #root {
 }
 
 .pageContent {
-  padding-top: 80px; /* Adjust if your header is taller */
+  padding-top: 160px; /* Adjust if your header is taller */
 }
 
 .App {
