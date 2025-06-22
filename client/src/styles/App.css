@@ -60,3 +60,10 @@ footer{
   background-color: #E0AAFF;
   padding: 10px;
 }
+
+/* ======== Responsive: Mobile View ======== */
+@media (max-width: 768px) {
+  .pageContent {
+    padding-top: 100px;
+  }
+}
