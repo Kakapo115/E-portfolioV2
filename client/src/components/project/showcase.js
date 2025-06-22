@@ -14,10 +14,34 @@ class Showcase extends Component {
 
   componentDidMount() {
     this.startAutoSlide();
+
+    const container =
+      document.querySelector(".project-slideshowContainer") ||
+      document.querySelector(".aboutSlideshowContainer");
+    if (container) {
+      container.addEventListener("touchstart", this.handleTouchStart, {
+        passive: true,
+      });
+      container.addEventListener("touchend", this.handleTouchEnd, {
+        passive: true,
+      });
+      container.addEventListener("touchcancel", this.handleTouchEnd, {
+        passive: true,
+      });
+    }
   }
 
   componentWillUnmount() {
     clearInterval(this.slideInterval);
+
+    const container =
+      document.querySelector(".project-slideshowContainer") ||
+      document.querySelector(".aboutSlideshowContainer");
+    if (container) {
+      container.removeEventListener("touchstart", this.handleTouchStart);
+      container.removeEventListener("touchend", this.handleTouchEnd);
+      container.removeEventListener("touchcancel", this.handleTouchEnd);
+    }
   }
 
   startAutoSlide = () => {
