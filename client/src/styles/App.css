@@ -13,7 +13,7 @@ html, body, #root {
 }
 
 .pageContent {
-  padding-top: 160px;
+  padding-top: 150px;
   padding-bottom: 40px;
   background: linear-gradient(to bottom right, #3c096c, #e0aaff);
   color: white;
