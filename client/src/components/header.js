@@ -19,7 +19,7 @@ class Header extends Component {
     const { isMenuOpen } = this.state;
 
     return (
-      <header className={`header ${this.props.className || ""}`}>
+      <header className={`header${this.props.isHidden ? " hidden" : ""}`}>
         <div className="menuRow">
           <h1 className="siteTitle">Ricky Syme's E-Portfolio</h1>
           <button className="hamburger" onClick={this.toggleMenu}>
