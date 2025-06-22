@@ -12,6 +12,7 @@ class contact extends Component {
       captchaValue: null,
       sending: false,
       sent: false,
+      captchaSize: "normal",
     };
 
     // Create a ref for the reCAPTCHA widget
@@ -64,6 +65,23 @@ class contact extends Component {
     this.setState({ captchaValue: value });
   };
 
+  componentDidMount() {
+    const isMobile = window.innerWidth <= 768;
+    this.setState({ captchaSize: isMobile ? "compact" : "normal" });
+
+    // Optional: handle resize
+    window.addEventListener("resize", this.updateCaptchaSize);
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener("resize", this.updateCaptchaSize);
+  }
+
+  updateCaptchaSize = () => {
+    const isMobile = window.innerWidth <= 768;
+    this.setState({ captchaSize: isMobile ? "compact" : "normal" });
+  };
+
   render() {
     const { name, email, message, sent, sending } = this.state;
 
@@ -106,6 +124,7 @@ class contact extends Component {
                   ref={this.recaptchaRef}
                   sitekey="6LchC1orAAAAACMkDD_7KWCUBUyq9iV8VRn6VDxn"
                   onChange={this.handleCaptchaChange}
+                  size={this.state.captchaSize}
                 />
               </div>
 

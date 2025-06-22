@@ -9,10 +9,11 @@
   padding-bottom: 8rem;
 }
 
-.contactform, .cv-container {
+.contactform,
+.cv-container {
   flex: 1;
   min-width: 300px;
-  background-color: #10002B; /* Russian Violet */
+  background-color: #10002b; /* Russian Violet */
   padding: 2rem;
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
@@ -21,11 +22,11 @@
 .contactform h1,
 .cv-container h1 {
   font-size: 1.8rem;
-  color: #E0AAFF;
+  color: #e0aaff;
   margin-bottom: 1rem;
 }
 
-.form-group{
+.form-group {
   padding-bottom: 10px;
 }
 
@@ -42,7 +43,7 @@
 }
 
 .form-group button {
-  background-color: #5A189A; /* Tekhelet */
+  background-color: #5a189a; /* Tekhelet */
   color: white;
   padding: 12px 40px;
   font-size: 1rem;
@@ -53,11 +54,11 @@
 }
 
 .form-group button:hover {
-  background-color: #7B2CBF; /* French Violet */
+  background-color: #7b2cbf; /* French Violet */
 }
 
 .download-btn {
-  background-color: #5A189A;
+  background-color: #5a189a;
   color: white;
   padding: 12px 40px;
   font-size: 1rem;
@@ -70,16 +71,19 @@
 }
 
 .download-btn:hover {
-  background-color: #9D4EDD; /* Amethyst */
+  background-color: #9d4edd; /* Amethyst */
 }
 
 .sending-message,
 .sent-message {
   font-style: italic;
-  color: #E0AAFF;
+  color: #e0aaff;
 }
 
-.recaptcha{
+.recaptcha {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   padding-bottom: 10px;
 }
 
@@ -91,14 +95,10 @@
     width: 90%;
   }
 
-  .contactform, .cv-container {
+  .contactform,
+  .cv-container {
     width: 100%;
     padding: 1.5rem;
     box-sizing: border-box;
-  }
-
-  .g-recaptcha {
-    transform: scale(0.85);
-    transform-origin: left;
   }
 }
