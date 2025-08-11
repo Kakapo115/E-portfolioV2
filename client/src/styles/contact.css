@@ -1,103 +1,135 @@
-.contact-container {
-  width: 75%;
-  margin: 0 auto;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 3rem;
-  justify-content: space-between;
-  padding-top: 4rem;
-  padding-bottom: 8rem;
+.contact-inner {
+  width: 90%;
+  background-color: #10002b;
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.4);
 }
 
+.contact-container {
+  width: 90%;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+@media (max-width: 900px) {
+  .contact-container {
+    width: 90%;
+    grid-template-columns: 1fr; /* stack on mobile/tablet */
+  }
+}
+
+.contactCard,
 .contactform,
 .cv-container {
-  flex: 1;
-  min-width: 300px;
-  background-color: #10002b; /* Russian Violet */
+  background: #10002b91;
+  color: #eaeaea;
+  border: 1px solid rgba(128, 90, 213, 0.35);
+  border-radius: 16px;
   padding: 2rem;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.25);
+  transition: transform 160ms ease, box-shadow 160ms ease, border-color 160ms ease, background 160ms ease;
+}
+
+.contactCard:hover,
+.contactform:hover,
+.cv-container:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 28px rgba(0,0,0,0.3);
+  border-color: rgba(128, 90, 213, 0.6);
+  background: #140037; /* tiny lift on hover */
 }
 
 .contactform h1,
 .cv-container h1 {
-  font-size: 1.8rem;
-  color: #e0aaff;
-  margin-bottom: 1rem;
+  font-size: 1.6rem;
+  color: #c4b5fd;
+  margin: 0 0 0.5rem 0;
 }
 
-.form-group {
-  padding-bottom: 10px;
+.contactform p,
+.cv-container p {
+  margin: 0 0 1rem 0;
+  color: #dcdcdc;
 }
+
+/* Form controls */
+.form-group { margin-bottom: 1rem; }
 
 .form-group input,
 .form-group textarea {
-  width: 100%;
-  background-color: rgba(255, 255, 255, 0.95);
-  color: black;
-  border-radius: 8px;
-  padding: 12px 0px 12px 12px;
-  box-shadow: none;
-  border: none;
-  margin-bottom: 1rem;
+  width: 93%;
+  background-color: #1b0b3a;       
+  color: #eaeaea;
+  border-radius: 10px;
+  padding: 12px 14px;
+  border: 1px solid rgba(128, 90, 213, 0.35);
+  outline: none;
+  transition: box-shadow 0.15s ease, border-color 0.15s ease, background 0.15s ease;
 }
 
-.form-group button {
-  background-color: #5a189a; /* Tekhelet */
-  color: white;
-  padding: 12px 40px;
-  font-size: 1rem;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
+.form-group textarea {
+  min-height: 140px;
+  resize: vertical;
 }
 
-.form-group button:hover {
-  background-color: #7b2cbf; /* French Violet */
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: #b9a9e6;
 }
 
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: #7b2cbf;
+  box-shadow: 0 0 0 3px rgba(123, 44, 191, 0.25);
+  background: #210d4a;
+}
+
+/* Buttons */
+.form-group button,
 .download-btn {
   background-color: #5a189a;
   color: white;
-  padding: 12px 40px;
+  padding: 12px 32px;
   font-size: 1rem;
-  border-radius: 8px;
-  transition: background-color 0.3s ease;
-  display: inline-block;
-  margin-top: 1rem;
-  text-align: center;
-  text-decoration: none;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: transform 120ms ease, box-shadow 120ms ease, background-color 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none; 
 }
 
+.form-group button:hover,
 .download-btn:hover {
-  background-color: #9d4edd; /* Amethyst */
+  background-color: #7b2cbf;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(0,0,0,0.28);
 }
 
+.form-group button:active,
+.download-btn:active {
+  transform: translateY(0);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.22);
+}
+
+/* Status text */
 .sending-message,
 .sent-message {
   font-style: italic;
   color: #e0aaff;
+  margin-top: 0.5rem;
 }
 
-.recaptcha {
-  padding-bottom: 26px;
-}
+.recaptcha { margin: 0.5rem 0 1rem; }
 
-/* ======== Responsive: Mobile View ======== */
 @media (max-width: 768px) {
-  .contact-container {
-    flex-direction: column;
-    align-items: center;
-    width: 90%;
-    padding-top: 2rem;
-    padding-bottom: 0;
-  }
-
+  .contact-inner { padding: 1.5rem; }
+  .contactCard,
   .contactform,
-  .cv-container {
-    width: 100%;
-    padding: 1.5rem;
-    box-sizing: border-box;
-  }
+  .cv-container { padding: 1.5rem; }
 }

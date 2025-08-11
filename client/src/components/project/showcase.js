@@ -1,179 +1,54 @@
-import React, { Component } from "react";
+import React, { useRef } from "react";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
-class Showcase extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      currentIndex: 0,
-      isHovered: false,
-      fade: true,
-      activeFilter: "all",
-    };
-    this.slideInterval = null;
+const Showcase = ({ devs }) => {
+  const sliderRef = useRef(null);
+
+  const settings = {
+    dots: false,
+    arrows: false,
+    infinite: true,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 0,
+    speed: 12000,
+    cssEase: "linear",
+    pauseOnHover: true,
+    responsive: [
+      { breakpoint: 1024, settings: { slidesToShow: 3 } },
+      { breakpoint: 768, settings: { slidesToShow: 1 } },
+    ],
+  };
+
+  if (!devs || devs.length === 0) {
+    return <div className="project-slideshowContainer">No projects found.</div>;
   }
 
-  componentDidMount() {
-    this.startAutoSlide();
-
-    const container =
-      document.querySelector(".project-slideshowContainer") ||
-      document.querySelector(".aboutSlideshowContainer");
-    if (container) {
-      container.addEventListener("touchstart", this.handleTouchStart, {
-        passive: true,
-      });
-      container.addEventListener("touchend", this.handleTouchEnd, {
-        passive: true,
-      });
-      container.addEventListener("touchcancel", this.handleTouchEnd, {
-        passive: true,
-      });
-    }
-  }
-
-  componentWillUnmount() {
-    clearInterval(this.slideInterval);
-
-    const container =
-      document.querySelector(".project-slideshowContainer") ||
-      document.querySelector(".aboutSlideshowContainer");
-    if (container) {
-      container.removeEventListener("touchstart", this.handleTouchStart);
-      container.removeEventListener("touchend", this.handleTouchEnd);
-      container.removeEventListener("touchcancel", this.handleTouchEnd);
-    }
-  }
-
-  startAutoSlide = () => {
-    this.slideInterval = setInterval(() => {
-      if (!this.state.isHovered) {
-        this.goToNextSlide();
-      }
-    }, 4000);
-  };
-
-  goToNextSlide = () => {
-    const { devs } = this.props;
-    const { activeFilter } = this.state;
-
-    const filteredDevs =
-      activeFilter === "all"
-        ? devs
-        : devs.filter((d) => d.type === activeFilter);
-
-    this.setState({ fade: false }, () => {
-      setTimeout(() => {
-        this.setState((prevState) => ({
-          currentIndex: (prevState.currentIndex + 1) % filteredDevs.length,
-          fade: true,
-        }));
-      }, 300);
-    });
-  };
-
-  goToPreviousSlide = () => {
-    const { devs } = this.props;
-    const { activeFilter } = this.state;
-
-    const filteredDevs =
-      activeFilter === "all"
-        ? devs
-        : devs.filter((d) => d.type === activeFilter);
-
-    this.setState({ fade: false }, () => {
-      setTimeout(() => {
-        this.setState((prevState) => ({
-          currentIndex:
-            (prevState.currentIndex - 1 + filteredDevs.length) %
-            filteredDevs.length,
-          fade: true,
-        }));
-      }, 300);
-    });
-  };
-
-  handleMouseEnter = () => {
-    this.setState({ isHovered: true });
-  };
-
-  handleMouseLeave = () => {
-    this.setState({ isHovered: false });
-  };
-
-  render() {
-    const { devs } = this.props;
-    const { currentIndex, fade, activeFilter } = this.state;
-    const filteredDevs =
-      activeFilter === "all"
-        ? devs
-        : devs.filter((d) => d.type === activeFilter);
-    const dev = filteredDevs[currentIndex % filteredDevs.length];
-
-    if (!filteredDevs || filteredDevs.length === 0) {
-      return (
-        <div className="project-slideshowContainer">No projects found.</div>
-      );
-    }
-
-    const typeMap = {
-      webDev: "Web Development",
-      appDev: "App Development",
-      otherDev: "Other Development",
-    };
-
-    return (
-      <div
-        className="project-slideshowContainer"
-        onMouseEnter={this.handleMouseEnter}
-        onMouseLeave={this.handleMouseLeave}
-      >
-        <div className="project-filterBar">
-          {["all", "webDev", "appDev", "otherDev"].map((type) => (
-            <button
-              key={type}
-              className={`filterButton ${
-                activeFilter === type ? "active" : ""
-              }`}
-              onClick={() =>
-                this.setState({ activeFilter: type, currentIndex: 0 })
-              }
-            >
-              {type === "all"
-                ? "All"
-                : type === "webDev"
-                ? "Web"
-                : type === "appDev"
-                ? "App"
-                : "Other"}
-            </button>
-          ))}
-        </div>
-        <div className="project-slideshowRow">
-          <div className={`project-slide ${fade ? "fadeIn" : "fadeOut"}`}>
+  return (
+    <div
+      className="project-slideshowContainer"
+      onMouseEnter={() => sliderRef.current?.slickPause()}
+      onMouseLeave={() => sliderRef.current?.slickPlay()}
+    >
+      <Slider ref={sliderRef} {...settings}>
+        {devs.map((card, idx) => (
+          <div key={idx}>
             <div
-              className="project-navZone inside leftZone"
-              onClick={this.goToPreviousSlide}
+              className="project-card"
+              style={{ backgroundImage: `url(${card.imageUrl})` }}
             >
-              <span className="project-arrow">&#10094;</span>
-            </div>
-
-            <div className="project-slideContent">
-              <div className="project-slideText">
-                <h2>{dev.name}</h2>
-                <p>{typeMap[dev.type] || dev.type}</p>
-                <p>{dev.description}</p>
-                <p>
-                  <strong>Skills:</strong>{" "}
-                  {dev.skills.split(", ").map((skill, i) => (
-                    <span key={i} className="skill">
-                      {skill}
-                      {i < dev.skills.split(", ").length - 1 && ", "}
-                    </span>
-                  ))}
+              <div className="project-card-content">
+                <h2 className="project-title">{card.name}</h2>
+                <p className="project-description">{card.description}</p>
+                <p className="project-skills">
+                  <strong>Skills:</strong> {card.skills}
                 </p>
-                {dev.url && (
+                {card.url && (
                   <a
-                    href={dev.url}
+                    href={card.url}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="projLink"
@@ -182,38 +57,12 @@ class Showcase extends Component {
                   </a>
                 )}
               </div>
-
-              <div className="project-slideImageContainer">
-                <img
-                  src={dev.imageUrl}
-                  alt={dev.name}
-                  className="project-slideImage"
-                />
-              </div>
-            </div>
-
-            <div
-              className="project-navZone inside rightZone"
-              onClick={this.goToNextSlide}
-            >
-              <span className="project-arrow">&#10095;</span>
             </div>
           </div>
-        </div>
-        <div className="dotNav">
-          {filteredDevs.map((_, index) => (
-            <span
-              key={index}
-              className={`dot ${currentIndex === index ? "active" : ""}`}
-              onClick={() =>
-                this.setState({ currentIndex: index, isHovered: true })
-              }
-            ></span>
-          ))}
-        </div>
-      </div>
-    );
-  }
-}
+        ))}
+      </Slider>
+    </div>
+  );
+};
 
 export default Showcase;

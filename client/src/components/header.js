@@ -15,36 +15,19 @@ class Header extends Component {
   };
 
   render() {
-    const { setSelectedComponent } = this.props;
+    const { setSelectedIndex } = this.props;
     const { isMenuOpen } = this.state;
 
     return (
-      <header className={`header${this.props.isHidden ? " hidden" : ""}`}>
+      <header className="header">
         <div className="menuRow">
           <h1 className="siteTitle">Ricky Syme's E-Portfolio</h1>
-          <button className="hamburger" onClick={this.toggleMenu}>
-            ☰
-          </button>
+          <button className="hamburger" onClick={this.toggleMenu}>☰</button>
           <div className={`navContainer ${isMenuOpen ? "open" : ""}`}>
             <div className="mainNav">
-              <button
-                className="nav"
-                onClick={() => setSelectedComponent("contact")}
-              >
-                Contact
-              </button>
-              <button
-                className="nav"
-                onClick={() => setSelectedComponent("about")}
-              >
-                About
-              </button>
-              <button
-                className="nav"
-                onClick={() => setSelectedComponent("projects")}
-              >
-                Projects
-              </button>
+              <button className="nav" onClick={() => setSelectedIndex(0)}>Contact</button>
+              <button className="nav" onClick={() => setSelectedIndex(1)}>About</button>
+              <button className="nav" onClick={() => setSelectedIndex(2)}>Projects</button>
             </div>
           </div>
         </div>

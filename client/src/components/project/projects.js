@@ -30,8 +30,11 @@ class projects extends Component {
     const { devs } = this.state;
 
     return (
-      <div className="pageContent">
-        <div className="project">
+      <div
+        className="panel-inner project-inner"
+        style={{ borderRadius: "0px 12px 12px 0px" }}
+      >
+        <div className="project-container">
           <Showcase devs={devs} />
         </div>
       </div>

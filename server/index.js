@@ -9,11 +9,17 @@ var devroute = require("./routes/api/devroute");
 var app = express();
 
 const cors = require("cors");
+
+// Dev and live devlopment differences
+const allowedOrigins = {
+  development: "http://localhost:3000",
+  production: "https://ricky-syme-e-portfoliov2.netlify.app",
+};
 // Enable CORS for all routes
 app.use(
   cors({
     credentials: true,
-    origin: "https://ricky-syme-e-portfoliov2.netlify.app",
+    origin: allowedOrigins[process.env.NODE_ENV],
   })
 );
 
@@ -33,7 +39,6 @@ mongoose
   });
 
 //set port 5000 or the production server's
-//preconfigured service port
 var port = process.env.PORT || 5000;
 
 app.use("/api/dev", devroute);

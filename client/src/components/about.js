@@ -1,154 +1,44 @@
-import React, { Component } from "react";
+import React from "react";
 
-class AboutSlideshow extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      currentIndex: 0,
-      isHovered: false,
-      fade: true,
-    };
-    this.slideInterval = null;
+export default function AboutCards() {
+  const sections = [
+    {
+      title: "About Me",
+      content:
+        "Junior software developer based in Tauranga, NZ (BAppIT, 2023). I’m hands-on with React/Next.js, Node/Express, and databases (MongoDB & PostgreSQL), with recent work using TypeScript, Docker, and JWT auth. I like clear problems, tidy code, and shipping small improvements quickly. I’m looking for a junior role where I can contribute immediately while learning from a strong team.",
+    },
+    {
+      title: "Career",
+      content:
+        "I’m moving from practical, team-focused work into software. That background gave me reliability, communication, and a bias for action. Recent projects include: a Twitter-style app (Express + JWT + MongoDB + Firebase for images), a Next.js notes app with PostgreSQL, and a themed UWP/MAUI-style desktop app. I enjoy owning tasks end-to-end and collaborating to get features over the line.",
+    },
+    {
+      title: "Education",
+      content:
+        "Bachelor of Applied Information Technology (Nov 2023). Covered full-stack web (React, Node), .NET MAUI foundations, databases (MongoDB, PostgreSQL), and C#/Unity basics. I keep learning with Python scripting and modern frontend patterns. Strong interest in TypeScript, testing, and clean component architecture.",
+    },
+    // Optional 4th card:
+    // {
+    //   title: "What I’m Looking For",
+    //   content:
+    //     "Junior/Graduate Software Developer—frontend or full-stack. Open to Tauranga/Auckland or remote NZ. I value code reviews, clear tickets, and a culture that ships.",
+    // },
+  ];
 
-    this.slides = [
-      {
-        title: "About Me",
-        content: `I'm a passionate and curious individual who graduated with a Bachelor of Applied Information at the end of 2023. I’m based in Tauranga, nestled in the beautiful Bay of Plenty — a place that balances my love for both nature and technology. Whether I’m out fishing, camping, or exploring the outdoors, or diving into digital projects, I’ve always been drawn to understanding how things work. That curiosity naturally led me into the world of digital technology, where I found not just interest, but purpose. 
-        My approach to life blends analytical thinking with hands-on experience, and I enjoy solving problems both in the physical and digital worlds. Now, having completed my studies, I’m eager to put my skills to use in the tech industry. I’m motivated by the ever-evolving nature of technology and driven to grow within it. I see this as not just a career, but a field where I can continuously explore, learn, and make meaningful contributions.`,
-      },
-      {
-        title: "Career",
-        content: `My career journey has largely been grounded in physical labor roles, where I developed strong soft skills such as communication, resilience, teamwork, and a strong work ethic. Despite the hands-on nature of that work, I always held a deep interest in technology, fascinated by how systems function logically and efficiently. Over time, this interest turned into a goal — to pivot into the tech industry and build a career where I could apply both my technical and interpersonal strengths. 
-        Now that I’ve completed my formal education, I’m ready to take that leap. I bring with me not only the technical knowledge I’ve gained through my degree and personal learning, but also the discipline and problem-solving mindset honed through years of real-world work experience. I’m enthusiastic about contributing to a tech-focused environment, whether it's development, IT support, or problem-solving tasks. My ability to adapt, communicate effectively, and stay committed to continuous improvement means I’m well-prepared to step into any role and thrive.`,
-      },
-      {
-        title: "Education",
-        content: `I earned my Bachelor of Applied Information in November 2023, a degree that gave me a solid foundation across a wide range of technologies and development frameworks. Throughout my studies, I engaged in hands-on learning in areas like .NET MAUI development for cross-platform apps, full-stack web development using the MERN stack, and immersive game development using Unity and Unreal Engine — working primarily with C# and some C++. These projects challenged me to think critically, collaborate with others, and see a product through from concept to completion.
-        In addition to the structured coursework, I’ve spent considerable time expanding my skills on my own. This includes exploring Python scripting, managing content through WordPress, and experimenting with different tools and platforms to broaden my technical toolkit. This combination of academic and self-directed learning has shaped me into an adaptable and self-motivated developer who isn’t afraid to take on new challenges. I’m confident in my ability to learn on the fly and apply my growing skill set to real-world tasks and professional projects.`,
-      },
-    ];
-  }
-
-  componentDidMount() {
-    this.startAutoSlide();
-
-    const container =
-      document.querySelector(".project-slideshowContainer") ||
-      document.querySelector(".aboutSlideshowContainer");
-    if (container) {
-      container.addEventListener("touchstart", this.handleTouchStart, {
-        passive: true,
-      });
-      container.addEventListener("touchend", this.handleTouchEnd, {
-        passive: true,
-      });
-      container.addEventListener("touchcancel", this.handleTouchEnd, {
-        passive: true,
-      });
-    }
-  }
-
-  componentWillUnmount() {
-    clearInterval(this.slideInterval);
-
-    const container =
-      document.querySelector(".project-slideshowContainer") ||
-      document.querySelector(".aboutSlideshowContainer");
-    if (container) {
-      container.removeEventListener("touchstart", this.handleTouchStart);
-      container.removeEventListener("touchend", this.handleTouchEnd);
-      container.removeEventListener("touchcancel", this.handleTouchEnd);
-    }
-  }
-
-  startAutoSlide = () => {
-    this.slideInterval = setInterval(() => {
-      if (!this.state.isHovered) {
-        this.goToNextSlide();
-      }
-    }, 5000); // 5s between slides
-  };
-
-  goToNextSlide = () => {
-    this.setState({ fade: false }, () => {
-      setTimeout(() => {
-        this.setState((prevState) => ({
-          currentIndex: (prevState.currentIndex + 1) % this.slides.length,
-          fade: true,
-        }));
-      }, 300);
-    });
-  };
-
-  goToPreviousSlide = () => {
-    this.setState({ fade: false }, () => {
-      setTimeout(() => {
-        this.setState((prevState) => ({
-          currentIndex:
-            (prevState.currentIndex - 1 + this.slides.length) %
-            this.slides.length,
-          fade: true,
-        }));
-      }, 300);
-    });
-  };
-
-  handleMouseEnter = () => this.setState({ isHovered: true });
-  handleMouseLeave = () => this.setState({ isHovered: false });
-
-  render() {
-    const { currentIndex } = this.state;
-    const { title, content } = this.slides[currentIndex];
-
-    return (
-      <div className="pageContent">
-        <div
-          className="aboutSlideshowContainer"
-          onMouseEnter={this.handleMouseEnter}
-          onMouseLeave={this.handleMouseLeave}
-        >
-          <div className="slideshowRow">
-            <div className={`slide ${this.state.fade ? "fadeIn" : "fadeOut"}`}>
-              {/* Left Arrow (overlapping left side) */}
-              <div
-                className="navZone inside leftZone"
-                onClick={this.goToPreviousSlide}
-              >
-                <span className="arrow">&#10094;</span>
-              </div>
-
-              {/* Slide Content */}
-              <div className="slideContent">
-                <h1>{title}</h1>
-                <p>{content}</p>
-              </div>
-
-              {/* Right Arrow (overlapping right side) */}
-              <div
-                className="navZone inside rightZone"
-                onClick={this.goToNextSlide}
-              >
-                <span className="arrow">&#10095;</span>
-              </div>
-            </div>
-            <div className="dotNav">
-              {this.slides.map((_, index) => (
-                <span
-                  key={index}
-                  className={`dot ${
-                    this.state.currentIndex === index ? "active" : ""
-                  }`}
-                  onClick={() =>
-                    this.setState({ currentIndex: index, isHovered: true })
-                  }
-                ></span>
-              ))}
-            </div>
-          </div>
+  return (
+    <div className="panel-inner about-inner">
+      <div className="aboutGridContainer">
+        <div className="aboutGrid">
+          {sections.map((s, i) => (
+            <section className="aboutCard" key={i} aria-labelledby={`sec-${i}`}>
+              <h2 id={`sec-${i}`} className="aboutCard-title">
+                {s.title}
+              </h2>
+              <p className="aboutCard-body">{s.content}</p>
+            </section>
+          ))}
         </div>
       </div>
-    );
-  }
+    </div>
+  );
 }
-
-export default AboutSlideshow;

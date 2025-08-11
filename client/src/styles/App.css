@@ -2,9 +2,8 @@
 @import './nav.css';
 @import './about.css';
 @import './contact.css';
-@import './SiteAnimations.css';
 
-html, body, #root {
+html, body, #root, .App {
   height: 100%;
   margin: 0;
   padding: 0;
@@ -12,17 +11,9 @@ html, body, #root {
   overflow-x: hidden;
 }
 
-.pageContent {
-  padding-top: 73px;
-  padding-bottom: 40px;
-  background: linear-gradient(to bottom right, #3c096c, #e0aaff);
-  color: white;
-}
-
 .App {
-  min-height: 100vh; /* Ensure it covers the full viewport height */
-  width: 100%;
-  overflow-x: hidden;
+  min-height: 100vh;
+  width: 101vw;
 }
 
 hr{
@@ -57,13 +48,72 @@ hr{
 
 footer{
   width: 100%;
-  background-color: #E0AAFF;
+  background: linear-gradient(#ffffff00, rgba(136, 0, 136, 0.554));
   padding: 10px;
 }
 
 /* ======== Responsive: Mobile View ======== */
 @media (max-width: 768px) {
-  .pageContent {
-    padding-top: 113px;
-  }
+
+}
+
+.panel-container {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+}
+
+.panel-slider {
+  display: flex;
+  width: 100%;
+  transition: transform 0.6s ease;
+}
+
+.panel {
+  flex: 0 0 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 120px; /* header 60px */
+  padding-bottom: 120px;
+  box-sizing: border-box;
+}
+
+/* Contact: right-anchored */
+.panel-contact {
+  justify-content: flex-start;
+  padding-left: 10%;
+}
+
+/* Projects: left-anchored */
+.panel-projects {
+  justify-content: flex-end;
+  padding-right: 10%;
+}
+
+
+.panel-inner {
+  height: 100%;
+  width: 100%;
+  margin: auto;
+  padding: 2rem;
+  box-sizing: border-box;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: #10002be1;
+}
+
+.App, .panel-container, header, footer {
+  position: relative;
+  z-index: 1;
+}
+
+canvas {
+  position: fixed !important;
+  z-index: -1 !important;
+  top: 0;
+  left: 0;
+  pointer-events: none;
 }

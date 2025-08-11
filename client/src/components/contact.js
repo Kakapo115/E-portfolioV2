@@ -86,9 +86,12 @@ class contact extends Component {
     const { name, email, message, sent, sending } = this.state;
 
     return (
-      <div className="pageContent">
+      <div
+        className="panel-inner contact-inner"
+        style={{ borderRadius: "12px 0px 0px 12px" }}
+      >
         <div className="contact-container">
-          <div className="contactform">
+          <div className="contactCard contactform">
             <h1>Let's Get In Touch</h1>
             <p>Fill in the form below or download my CV.</p>
             <form onSubmit={this.handleFormSubmit}>
@@ -137,11 +140,11 @@ class contact extends Component {
             </form>
           </div>
 
-          <div className="cv-container">
+          <div className="contactCard cv-container">
             <h1>Download My CV</h1>
             <p>Get a copy of my latest CV in PDF format:</p>
             <a
-              href="assets/RickySyme-CV-SoftwareDev.docx.pdf"
+              href="assets/RickySyme_CV.docx.pdf"
               download
               className="download-btn"
             >
