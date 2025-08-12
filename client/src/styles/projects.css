@@ -67,9 +67,10 @@
   color: #ffffff;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1040px) {
   .project-card {
     padding: 1rem;
+    height: unset;
   }
 }
 

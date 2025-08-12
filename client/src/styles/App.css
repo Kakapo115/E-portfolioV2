@@ -1,13 +1,16 @@
-@import './projects.css';
-@import './nav.css';
-@import './about.css';
-@import './contact.css';
+@import "./projects.css";
+@import "./nav.css";
+@import "./about.css";
+@import "./contact.css";
 
-html, body, #root, .App {
+html,
+body,
+#root,
+.App {
   height: 100%;
   margin: 0;
   padding: 0;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   overflow-x: hidden;
 }
 
@@ -16,16 +19,16 @@ html, body, #root, .App {
   width: 101vw;
 }
 
-hr{
+hr {
   border: 0;
   height: 2px;
-  background-color: black;  
+  background-color: black;
 }
 
 .icon {
   height: 50px;
   width: auto;
-  background-color: rgba(255, 255, 255, 0.8); 
+  background-color: rgba(255, 255, 255, 0.8);
   margin: 5px;
 }
 .icon:hover {
@@ -40,21 +43,16 @@ hr{
   box-shadow: 1px 3px 3px #10002b93;
 }
 
-.iconContainer{
+.iconContainer {
   justify-content: center;
   align-items: center;
   margin-top: 20px;
 }
 
-footer{
+footer {
   width: 100%;
   background: linear-gradient(#ffffff00, rgba(136, 0, 136, 0.554));
   padding: 10px;
-}
-
-/* ======== Responsive: Mobile View ======== */
-@media (max-width: 768px) {
-
 }
 
 .panel-container {
@@ -91,7 +89,6 @@ footer{
   padding-right: 10%;
 }
 
-
 .panel-inner {
   height: 100%;
   width: 100%;
@@ -105,7 +102,10 @@ footer{
   background-color: #10002be1;
 }
 
-.App, .panel-container, header, footer {
+.App,
+.panel-container,
+header,
+footer {
   position: relative;
   z-index: 1;
 }
@@ -116,4 +116,47 @@ canvas {
   top: 0;
   left: 0;
   pointer-events: none;
+}
+
+/* ======== Mobile: stack panels vertically ======== */
+@media (max-width: 1040px) {
+  .App {
+    width: 100%;
+  }
+
+  .panel-slider {
+    flex-direction: column; 
+    width: 100%;
+    transform: none !important;
+    transition: none; 
+  }
+
+  /* Panels: top-aligned content and mobile-friendly padding */
+  .panel {
+    flex: 0 0 auto;
+    align-items: flex-start; 
+    justify-content: center;
+    padding-top: 70px; 
+    padding-bottom: 0px; 
+  }
+
+  /* Remove desktop side anchoring/padding on mobile */
+  .panel-contact {
+    order: 3;
+    justify-content: center;
+    padding-left: 0;
+  }
+  .panel-about {
+    order: 1;
+  }
+  .panel-projects {
+    order: 2;
+    justify-content: center;
+    padding-right: 0;
+  }
+
+  /* Inner content also starts at the top */
+  .panel-inner {
+    justify-content: flex-start;
+  }
 }

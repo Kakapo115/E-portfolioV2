@@ -93,7 +93,7 @@
 }
 
 /* ======== Responsive: Desktop View ======== */
-@media (min-width: 769px) {
+@media (min-width: 1041px) {
   .menuRow {
     flex-wrap: nowrap;
   }
@@ -129,7 +129,7 @@
 }
 
 /* ======== Responsive: Mobile View ======== */
-@media (max-width: 768px) {
+@media (max-width: 1040px) {
   .menuRow {
     flex-direction: column;
     align-items: center;
